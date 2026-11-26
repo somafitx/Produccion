@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SOMAFITX | Tienda de Ropa Deportiva</title>
+  <title>SOMAFITX | Tienda de Ropa Deportiva & Colaboraciones</title>
   <style>
     :root {
       --bg-dark: #06060c;
@@ -26,6 +26,10 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--bg-dark);
       color: var(--text-main);
@@ -44,6 +48,8 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .header-logo {
@@ -127,7 +133,6 @@
       overflow: hidden;
     }
 
-    /* Efectos de energía de fondo */
     .hero::before, .hero::after {
       content: '';
       position: absolute;
@@ -227,12 +232,13 @@
 
     .seccion-titulo {
       text-align: center;
-      margin: 45px 0 25px;
+      margin: 45px 0 20px;
       font-size: 1.8rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
       position: relative;
+      padding: 0 15px;
     }
 
     .seccion-titulo::after {
@@ -245,12 +251,81 @@
       border-radius: 2px;
     }
 
-    .catalogo {
+    /* Barra de filtros por colaboración */
+    .filtros-bar {
+      max-width: 1140px;
+      margin: 0 auto 35px;
+      padding: 0 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn-filtro {
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-filtro:hover,
+    .btn-filtro.activo {
+      background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 0 14px rgba(147, 51, 234, 0.45);
+    }
+
+    .contenedor-principal {
       max-width: 1140px;
       margin: 0 auto 60px;
       padding: 0 20px;
+    }
+
+    .bloque-colaboracion {
+      margin-bottom: 50px;
+    }
+
+    .colab-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(147, 51, 234, 0.28);
+    }
+
+    .colab-header h3 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #ffffff, #00b4d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .colab-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(181, 23, 158, 0.18);
+      color: #e879f9;
+      border: 1px solid rgba(181, 23, 158, 0.4);
+    }
+
+    .grid-productos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 24px;
     }
 
@@ -263,6 +338,7 @@
       display: flex;
       flex-direction: column;
       transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      position: relative;
     }
 
     .card:hover {
@@ -271,9 +347,25 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 180, 216, 0.25);
     }
 
+    .card-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(6, 6, 12, 0.85);
+      backdrop-filter: blur(6px);
+      color: #00b4d8;
+      border: 1px solid rgba(0, 180, 216, 0.4);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
     .card img {
       width: 100%;
-      height: 280px;
+      height: 310px;
       object-fit: cover;
       background: #10101f;
       border-bottom: 1px solid rgba(147, 51, 234, 0.2);
@@ -287,8 +379,8 @@
       flex: 1;
     }
 
-    .card-body h3 {
-      font-size: 1.1rem;
+    .card-body h4 {
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--text-main);
     }
@@ -340,22 +432,28 @@
       border-top: 1px solid rgba(147, 51, 234, 0.15);
       background: #040408;
     }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hero h2 {
+        font-size: 1.9rem;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="header-logo">
-      <!-- Cambia 'logo.jpg' por el nombre de tu archivo del logo en GitHub -->
-      <img src="logo.jpg" alt="SOMAFITX Logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=100&q=80'">
+      <img src="img/logo.jpg" alt="SOMAFITX Logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=100&q=80'">
       <h1>SOMAFITX</h1>
     </div>
     <nav class="nav-links">
       <a href="#">Inicio</a>
       <a href="#catalogo">Colección</a>
-      <a href="#">Hombre</a>
-      <a href="#">Mujer</a>
-      <a href="#">Accesorios</a>
+      <a href="#colaboraciones">Colaboraciones</a>
     </nav>
     <div class="header-actions">
       <span class="badge-envio">Envíos a todo México</span>
@@ -365,11 +463,10 @@
 
   <section class="hero">
     <div class="hero-content">
-      <!-- Cambia 'logo.jpg' por el nombre de tu archivo del logo en GitHub -->
-      <img src="logo.jpg" alt="SOMAFITX Logo" class="hero-logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=200&q=80'">
+      <img src="img/logo.jpg" alt="SOMAFITX Logo" class="hero-logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=200&q=80'">
       <h2>SOMAFITX</h2>
-      <h3>Ropa Deportiva &amp; Suplementos</h3>
-      <p>Prendas diseñadas para entrenar al máximo y vestir con estilo todos los días. Elige tu prenda y pide directo por WhatsApp.</p>
+      <h3>Ropa Deportiva &amp; Colaboraciones Exclusivas</h3>
+      <p>Prendas diseñadas para entrenar al máximo y vestir con estilo todos los días. Elige tu pieza de edición especial y pide directo por WhatsApp.</p>
       <a href="#catalogo" class="btn-hero">Ver Catálogo</a>
       <div class="lema-bar">
         FUERZA <span>•</span> DISCIPLINA <span>•</span> RESULTADOS
@@ -377,9 +474,13 @@
     </div>
   </section>
 
-  <h2 class="seccion-titulo" id="catalogo">Catálogo de Ropa Deportiva</h2>
+  <h2 class="seccion-titulo" id="catalogo">Drop &amp; Colaboraciones</h2>
 
-  <main class="catalogo"></main>
+  <!-- Filtros rápidos por colaboración -->
+  <div class="filtros-bar" id="filtros-bar"></div>
+
+  <!-- Contenedor dinámico de colaboraciones y prendas -->
+  <main class="contenedor-principal" id="colaboraciones"></main>
 
   <footer>
     &copy; 2026 SOMAFITX Store &mdash; Todos los derechos reservados.
@@ -389,62 +490,216 @@
     // 1. Cambia este número por tu WhatsApp (código de país + número sin espacios)
     const TELEFONO_WHATSAPP = "525500000000";
 
-    // 2. Catálogo de productos
-    const productos = [
+    // 2. Ruta base de tus imágenes (relativa a tu carpeta Produccion en GitHub / local)
+    const RUTA_IMG = "img/";
+
+    // 3. Catálogo agrupado por colaboración
+    const colaboraciones = [
       {
-        nombre: "Playera Oversize SomafitX",
-        precio: "$450 MXN",
-        imagen: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80",
-        tallas: ["S", "M", "L", "XL"]
+        titulo: "Chainsaw Man",
+        productos: [
+          {
+            nombre: "Chainsaw Man (Edición 173)",
+            precio: "$1,599 MXN",
+            imagen: "prenda-173.jpg",
+            tallas: ["L"]
+          },
+          {
+            nombre: "Chainsaw Man (Edición 134)",
+            precio: "$1,599 MXN",
+            imagen: "prenda-134.jpg",
+            tallas: ["M"]
+          },
+          {
+            nombre: "Chainsaw Man (Edición 144)",
+            precio: "$1,599 MXN",
+            imagen: "prenda-144.jpg",
+            tallas: ["M"]
+          }
+        ]
       },
       {
-        nombre: "Sudadera Hoodie SomafitX",
-        precio: "$890 MXN",
-        imagen: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80",
-        tallas: ["S", "M", "L", "XL"]
+        titulo: "Disney - Mickey Mouse",
+        productos: [
+          {
+            nombre: "Disney Mickey Mouse",
+            precio: "$1,599 MXN",
+            imagen: "prenda-213.jpg",
+            tallas: ["M"]
+          }
+        ]
       },
       {
-        nombre: "Jogger Deportivo Fit",
-        precio: "$680 MXN",
-        imagen: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&q=80",
-        tallas: ["28", "30", "32", "34"]
+        titulo: "Disney - The Nightmare Before Christmas",
+        productos: [
+          {
+            nombre: "Tim Burton's The Nightmare Before Christmas",
+            precio: "$1,599 MXN",
+            imagen: "prenda-043.jpg",
+            tallas: ["S", "M"]
+          },
+          {
+            nombre: "Tim Burton's The Nightmare Before Christmas (Jack Skellington)",
+            precio: "$1,599 MXN",
+            imagen: "prenda-156.jpg",
+            tallas: ["M"]
+          }
+        ]
       },
       {
-        nombre: "Playera de Compresión Pro",
-        precio: "$490 MXN",
-        imagen: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=600&q=80",
-        tallas: ["S", "M", "L", "XL"]
+        titulo: "IT Chapter Two",
+        productos: [
+          {
+            nombre: "IT Chapter Two (Pennywise)",
+            precio: "$1,599 MXN",
+            imagen: "prenda-014.jpg",
+            tallas: ["M"]
+          },
+          {
+            nombre: "IT Chapter Two",
+            precio: "$1,599 MXN",
+            imagen: "prenda-177.jpg",
+            tallas: ["M"]
+          }
+        ]
+      },
+      {
+        titulo: "Misfits",
+        productos: [
+          {
+            nombre: "Misfits (Static Age)",
+            precio: "$1,599 MXN",
+            imagen: "prenda-073.jpg",
+            tallas: ["M"]
+          }
+        ]
+      },
+      {
+        titulo: "Spider-Man / Marvel",
+        productos: [
+          {
+            nombre: "Spider-Man Protector of NYC",
+            precio: "$3,899 MXN",
+            imagen: "prenda-191.jpg",
+            tallas: ["M"]
+          }
+        ]
+      },
+      {
+        titulo: "Street Fighter",
+        productos: [
+          {
+            nombre: "Street Fighter Champion Edition",
+            precio: "$1,799 MXN",
+            imagen: "prenda-237.jpg",
+            tallas: ["M"]
+          }
+        ]
+      },
+      {
+        titulo: "The Lost Boys",
+        productos: [
+          {
+            nombre: "The Lost Boys / Vampire",
+            precio: "$1,599 MXN",
+            imagen: "prenda-114.jpg",
+            tallas: ["M"]
+          }
+        ]
+      },
+      {
+        titulo: "The Mummy",
+        productos: [
+          {
+            nombre: "The Mummy (Amon Ra)",
+            precio: "$1,599 MXN",
+            imagen: "prenda-136.jpg",
+            tallas: ["L"]
+          }
+        ]
       }
     ];
 
-    const contenedor = document.querySelector(".catalogo");
+    const contenedor = document.getElementById("colaboraciones");
+    const filtrosBar = document.getElementById("filtros-bar");
 
-    productos.forEach((prod, index) => {
-      const opcionesTalla = prod.tallas
-        .map((t) => `<option value="${t}">Talla ${t}</option>`)
-        .join("");
+    // Generar botones de filtro
+    function renderFiltros() {
+      let html = `<button class="btn-filtro activo" onclick="filtrarColab('todas', this)">Todas (${colaboraciones.reduce((acc, c) => acc + c.productos.length, 0)})</button>`;
+      colaboraciones.forEach((colab, idx) => {
+        html += `<button class="btn-filtro" onclick="filtrarColab(${idx}, this)">${colab.titulo}</button>`;
+      });
+      filtrosBar.innerHTML = html;
+    }
 
-      contenedor.innerHTML += `
-        <article class="card">
-          <img src="${prod.imagen}" alt="${prod.nombre}">
-          <div class="card-body">
-            <h3>${prod.nombre}</h3>
-            <p class="precio">${prod.precio}</p>
-            <select id="talla-${index}">${opcionesTalla}</select>
-            <button class="btn-compra" onclick="comprar(${index})">🛒 Comprar por WhatsApp</button>
-          </div>
-        </article>
-      `;
-    });
+    // Renderizar secciones de colaboraciones
+    function renderCatalogo(filtro = "todas") {
+      contenedor.innerHTML = "";
 
-    function comprar(index) {
-      const prod = productos[index];
-      const talla = document.getElementById(`talla-${index}`).value;
+      colaboraciones.forEach((colab, cIndex) => {
+        if (filtro !== "todas" && filtro !== cIndex) return;
+
+        const cardsHTML = colab.productos
+          .map((prod, pIndex) => {
+            const selectId = `talla-${cIndex}-${pIndex}`;
+            const opcionesTalla = prod.tallas
+              .map((t) => `<option value="${t}">Talla ${t}</option>`)
+              .join("");
+
+            return `
+              <article class="card">
+                <span class="card-tag">${colab.titulo}</span>
+                <img 
+                  src="${RUTA_IMG}${prod.imagen}" 
+                  alt="${prod.nombre}"
+                  onerror="this.src='https://placehold.co/600x700/0c0c16/00b4d8?text=${encodeURIComponent(prod.imagen)}'"
+                >
+                <div class="card-body">
+                  <h4>${prod.nombre}</h4>
+                  <p class="precio">${prod.precio}</p>
+                  <select id="${selectId}">${opcionesTalla}</select>
+                  <button class="btn-compra" onclick="comprar(${cIndex}, ${pIndex})">
+                    🛒 Comprar por WhatsApp
+                  </button>
+                </div>
+              </article>
+            `;
+          })
+          .join("");
+
+        contenedor.innerHTML += `
+          <section class="bloque-colaboracion">
+            <div class="colab-header">
+              <h3>${colab.titulo}</h3>
+              <span class="colab-badge">${colab.productos.length} ${colab.productos.length === 1 ? "pieza" : "piezas"}</span>
+            </div>
+            <div class="grid-productos">
+              ${cardsHTML}
+            </div>
+          </section>
+        `;
+      });
+    }
+
+    function filtrarColab(filtro, boton) {
+      document.querySelectorAll(".btn-filtro").forEach((btn) => btn.classList.remove("activo"));
+      boton.classList.add("activo");
+      renderCatalogo(filtro);
+    }
+
+    function comprar(cIndex, pIndex) {
+      const colab = colaboraciones[cIndex];
+      const prod = colab.productos[pIndex];
+      const talla = document.getElementById(`talla-${cIndex}-${pIndex}`).value;
       const mensaje = encodeURIComponent(
-        `Hola, me interesa comprar: ${prod.nombre} (${prod.precio}) en talla ${talla}.`
+        `Hola SOMAFITX, me interesa comprar: ${prod.nombre} de la colección ${colab.titulo} (${prod.precio}) en talla ${talla}.`
       );
       window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, "_blank");
     }
+
+    // Inicializar tienda
+    renderFiltros();
+    renderCatalogo();
   </script>
 
 </body>
