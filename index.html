@@ -6,17 +6,18 @@
   <title>SOMAFITX | Catálogo Completo &amp; Colaboraciones</title>
   <style>
     :root {
-      --bg-dark: #06060c;
-      --bg-card: #0c0c16;
-      --bg-input: #121222;
+      --bg-dark: #05050b;
+      --bg-card: #0b0b16;
+      --bg-input: #111122;
       --text-main: #ffffff;
-      --text-muted: #9fa0b8;
-      --neon-purple: #9333ea;
-      --neon-violet: #b5179e;
-      --neon-blue: #2563eb;
-      --neon-cyan: #00b4d8;
-      --neon-glow-blue: rgba(37, 99, 235, 0.45);
-      --neon-glow-purple: rgba(147, 51, 234, 0.45);
+      --text-muted: #a3a8c2;
+      --neon-purple: #8b2cf5;
+      --neon-violet: #a855f7;
+      --neon-blue: #0066ff;
+      --neon-cyan: #00a8ff;
+      --steel-silver: #cbd5e1;
+      --neon-glow-blue: rgba(0, 102, 255, 0.55);
+      --neon-glow-purple: rgba(139, 44, 245, 0.55);
     }
 
     * {
@@ -40,7 +41,7 @@
     header {
       background: rgba(6, 6, 12, 0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0, 180, 216, 0.25);
+      border-bottom: 1px solid rgba(0, 168, 255, 0.25);
       padding: 15px 5%;
       display: flex;
       justify-content: space-between;
@@ -56,6 +57,7 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      cursor: pointer;
     }
 
     .header-logo img {
@@ -71,7 +73,7 @@
       font-size: 1.4rem;
       font-weight: 900;
       letter-spacing: 2px;
-      background: linear-gradient(90deg, #fff, #00b4d8, #9333ea);
+      background: linear-gradient(90deg, #fff, #00a8ff, #8b2cf5);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -87,6 +89,7 @@
       font-size: 0.9rem;
       font-weight: 500;
       transition: color 0.2s;
+      cursor: pointer;
     }
 
     .nav-links a:hover {
@@ -101,30 +104,30 @@
 
     .badge-envio {
       font-size: 0.78rem;
-      color: #00b4d8;
-      border: 1px solid rgba(0, 180, 216, 0.4);
-      background: rgba(0, 180, 216, 0.1);
+      color: #00a8ff;
+      border: 1px solid rgba(0, 168, 255, 0.4);
+      background: rgba(0, 168, 255, 0.1);
       padding: 5px 12px;
       border-radius: 999px;
       font-weight: 600;
     }
 
     .btn-ws-header {
-      background: linear-gradient(135deg, #2563eb, #9333ea);
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
       color: #fff;
       text-decoration: none;
       padding: 6px 14px;
       border-radius: 8px;
       font-size: 0.85rem;
       font-weight: 700;
-      box-shadow: 0 0 12px rgba(147, 51, 234, 0.4);
+      box-shadow: 0 0 12px rgba(139, 44, 245, 0.4);
     }
 
     .hero {
       position: relative;
       background: linear-gradient(145deg, #05050a 0%, #0a0a14 100%);
-      border-bottom: 1px solid rgba(147, 51, 234, 0.2);
-      padding: 60px 5%;
+      border-bottom: 1px solid rgba(139, 44, 245, 0.2);
+      padding: 55px 5%;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -161,13 +164,18 @@
     }
 
     .hero-logo {
-      width: 160px;
-      height: 160px;
-      margin: 0 auto 18px;
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 22px;
       border-radius: 50%;
-      border: 3px solid #00b4d8;
-      box-shadow: 0 0 30px var(--neon-glow-blue), 0 0 15px var(--neon-glow-purple);
-      object-fit: cover;
+      background: radial-gradient(circle, #141428 0%, #05050b 100%);
+      padding: 6px;
+      border: 3px solid transparent;
+      background-image: linear-gradient(#080812, #080812), linear-gradient(135deg, #8b2cf5, #00a8ff);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: -8px 0 32px rgba(139, 44, 245, 0.55), 8px 0 32px rgba(0, 102, 255, 0.55);
+      object-fit: contain;
     }
 
     .hero h2 {
@@ -176,14 +184,14 @@
       text-transform: uppercase;
       letter-spacing: 2px;
       margin-bottom: 8px;
-      background: linear-gradient(90deg, #ffffff, #00b4d8, #b5179e);
+      background: linear-gradient(90deg, #e2e8f0 0%, #ffffff 45%, #8b2cf5 75%, #00a8ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero h3 {
       font-size: 1.05rem;
-      color: #00b4d8;
+      color: #00a8ff;
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 12px;
@@ -206,33 +214,40 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 1px;
-      box-shadow: 0 0 20px rgba(147, 51, 234, 0.5);
+      box-shadow: 0 0 20px rgba(139, 44, 245, 0.5);
       display: inline-block;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .btn-hero:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(0, 180, 216, 0.7);
+      box-shadow: 0 0 25px rgba(0, 168, 255, 0.7);
     }
 
     .lema-bar {
       margin-top: 22px;
-      font-size: 0.8rem;
-      font-weight: 700;
+      font-size: 0.82rem;
+      font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 4px;
-      color: #b5179e;
+      color: #e2e8f0;
     }
 
-    .lema-bar span {
-      color: #00b4d8;
+    .lema-bar span:first-child {
+      color: #8b2cf5;
       margin: 0 10px;
+      text-shadow: 0 0 8px rgba(139, 44, 245, 0.8);
+    }
+
+    .lema-bar span:last-child {
+      color: #00a8ff;
+      margin: 0 10px;
+      text-shadow: 0 0 8px rgba(0, 168, 255, 0.8);
     }
 
     .seccion-titulo {
       text-align: center;
-      margin: 45px 0 20px;
+      margin: 45px 0 14px;
       font-size: 1.8rem;
       font-weight: 800;
       text-transform: uppercase;
@@ -241,12 +256,20 @@
       padding: 0 15px;
     }
 
+    .seccion-subtitulo {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+      padding: 0 15px;
+    }
+
     .seccion-titulo::after {
       content: '';
       display: block;
       width: 70px;
       height: 3px;
-      background: linear-gradient(90deg, #00b4d8, #b5179e);
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-cyan));
       margin: 8px auto 0;
       border-radius: 2px;
     }
@@ -263,14 +286,15 @@
 
     .buscador-box {
       width: 100%;
-      max-width: 480px;
+      max-width: 520px;
+      position: relative;
     }
 
     .buscador-box input {
       width: 100%;
-      padding: 12px 18px;
+      padding: 13px 20px;
       border-radius: 999px;
-      border: 1px solid rgba(0, 180, 216, 0.4);
+      border: 1px solid rgba(0, 168, 255, 0.4);
       background: var(--bg-input);
       color: var(--text-main);
       font-size: 0.95rem;
@@ -280,23 +304,176 @@
 
     .buscador-box input:focus {
       border-color: var(--neon-cyan);
-      box-shadow: 0 0 15px rgba(0, 180, 216, 0.25);
+      box-shadow: 0 0 18px rgba(0, 168, 255, 0.3);
     }
 
-    .filtros-bar {
+    .contenedor-principal {
+      max-width: 1180px;
+      margin: 0 auto 70px;
+      padding: 0 20px;
+    }
+
+    /* === TARJETAS DE CATEGORÍAS EN PORTADA === */
+    .grid-categorias {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 24px;
+    }
+
+    .cat-card {
+      position: relative;
+      height: 290px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--bg-card);
+      border: 1px solid rgba(139, 44, 245, 0.35);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+      cursor: pointer;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .cat-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: var(--neon-cyan);
+      box-shadow: -6px 0 25px rgba(139, 44, 245, 0.4), 6px 0 25px rgba(0, 168, 255, 0.4);
+    }
+
+    .cat-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+      transition: transform 0.45s ease, opacity 0.35s ease;
+    }
+
+    .cat-card:hover img {
+      transform: scale(1.1);
+      opacity: 0.72;
+    }
+
+    .cat-overlay {
+      position: relative;
+      z-index: 2;
+      padding: 22px;
+      background: linear-gradient(to top, rgba(5, 5, 11, 0.96) 20%, rgba(5, 5, 11, 0.65) 70%, transparent 100%);
+    }
+
+    .cat-count {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(139, 44, 245, 0.25);
+      border: 1px solid rgba(139, 44, 245, 0.6);
+      color: #e9d5ff;
+      margin-bottom: 8px;
+    }
+
+    .cat-card h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .cat-cta {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--neon-cyan);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* === BARRA DE NAVEGACIÓN DENTRO DE UNA CATEGORÍA === */
+    .vista-header {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 26px;
+      padding: 16px 20px;
+      background: var(--bg-card);
+      border-radius: 14px;
+      border: 1px solid rgba(0, 168, 255, 0.28);
+    }
+
+    .btn-volver {
+      background: linear-gradient(90deg, var(--neon-purple), var(--neon-blue));
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
       gap: 8px;
+      box-shadow: 0 0 15px rgba(139, 44, 245, 0.4);
+      transition: transform 0.2s, filter 0.2s;
+    }
+
+    .btn-volver:hover {
+      transform: translateX(-3px);
+      filter: brightness(1.15);
+    }
+
+    .vista-titulo-grupo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .vista-titulo-grupo h3 {
+      font-size: 1.45rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #ffffff, #00a8ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .colab-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(139, 44, 245, 0.2);
+      color: #e879f9;
+      border: 1px solid rgba(139, 44, 245, 0.45);
+    }
+
+    .filtros-rapidos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+      justify-content: center;
     }
 
     .btn-filtro {
       background: var(--bg-card);
       color: var(--text-muted);
-      border: 1px solid rgba(0, 180, 216, 0.3);
-      padding: 7px 15px;
+      border: 1px solid rgba(0, 168, 255, 0.3);
+      padding: 6px 14px;
       border-radius: 999px;
-      font-size: 0.83rem;
+      font-size: 0.8rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
@@ -307,72 +484,76 @@
       background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
       color: #fff;
       border-color: transparent;
-      box-shadow: 0 0 14px rgba(147, 51, 234, 0.45);
+      box-shadow: 0 0 12px rgba(139, 44, 245, 0.45);
     }
 
-    .contenedor-principal {
-      max-width: 1180px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-    }
-
-    .bloque-colaboracion {
-      margin-bottom: 50px;
-    }
-
-    .colab-header {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(147, 51, 234, 0.28);
-    }
-
-    .colab-header h3 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      background: linear-gradient(90deg, #ffffff, #00b4d8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .colab-badge {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: rgba(181, 23, 158, 0.18);
-      color: #e879f9;
-      border: 1px solid rgba(181, 23, 158, 0.4);
-    }
-
+    /* === GRID Y TARJETAS DE PRENDAS CON ZOOM AL PASAR EL MOUSE === */
     .grid-productos {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+      gap: 24px;
     }
 
     .card {
       background: var(--bg-card);
       border-radius: 14px;
-      border: 1px solid rgba(0, 180, 216, 0.25);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(147, 51, 234, 0.08);
+      border: 1px solid rgba(0, 168, 255, 0.25);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease, box-shadow 0.28s ease;
       position: relative;
+      z-index: 1;
     }
 
+    /* Efecto al pasar el mouse por encima: la tarjeta y la prenda se agrandan */
     .card:hover {
-      transform: translateY(-5px);
-      border-color: #00b4d8;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 180, 216, 0.25);
+      transform: scale(1.06) translateY(-6px);
+      z-index: 15;
+      border-color: var(--neon-cyan);
+      box-shadow: -8px 12px 30px rgba(139, 44, 245, 0.35), 8px 12px 30px rgba(0, 168, 255, 0.35);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 310px;
+      overflow: hidden;
+      background: #10101f;
+      border-bottom: 1px solid rgba(139, 44, 245, 0.25);
+      cursor: zoom-in;
+    }
+
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.08);
+    }
+
+    .zoom-hint {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(5, 5, 11, 0.82);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 168, 255, 0.45);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      pointer-events: none;
+    }
+
+    .card:hover .zoom-hint {
+      opacity: 1;
     }
 
     .card-tag {
@@ -381,8 +562,8 @@
       left: 12px;
       background: rgba(6, 6, 12, 0.85);
       backdrop-filter: blur(6px);
-      color: #00b4d8;
-      border: 1px solid rgba(0, 180, 216, 0.4);
+      color: #00a8ff;
+      border: 1px solid rgba(0, 168, 255, 0.4);
       font-size: 0.7rem;
       font-weight: 700;
       padding: 4px 10px;
@@ -405,14 +586,6 @@
       z-index: 2;
     }
 
-    .card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      background: #10101f;
-      border-bottom: 1px solid rgba(147, 51, 234, 0.2);
-    }
-
     .card-body {
       padding: 16px;
       display: flex;
@@ -430,13 +603,13 @@
     .precio {
       font-size: 1.2rem;
       font-weight: 800;
-      color: #00b4d8;
+      color: #00a8ff;
     }
 
     select {
       padding: 8px;
       border-radius: 8px;
-      border: 1px solid rgba(147, 51, 234, 0.4);
+      border: 1px solid rgba(139, 44, 245, 0.4);
       background: var(--bg-input);
       color: var(--text-main);
       width: 100%;
@@ -445,7 +618,7 @@
     }
 
     select:focus {
-      border-color: #00b4d8;
+      border-color: #00a8ff;
     }
 
     .btn-compra {
@@ -458,7 +631,7 @@
       font-size: 0.88rem;
       cursor: pointer;
       margin-top: auto;
-      box-shadow: 0 4px 14px rgba(147, 51, 234, 0.35);
+      box-shadow: 0 4px 14px rgba(139, 44, 245, 0.35);
       transition: filter 0.2s;
     }
 
@@ -466,12 +639,145 @@
       filter: brightness(1.15);
     }
 
+    /* === MODAL / LIGHTBOX DE VISTA PREVIA GRANDE (CASI MITAD DE PANTALLA) === */
+    .modal-visor {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 3, 8, 0.88);
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .modal-visor.abierto {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .modal-contenido {
+      background: #0c0c18;
+      border: 1.5px solid rgba(0, 168, 255, 0.5);
+      box-shadow: -12px 0 45px rgba(139, 44, 245, 0.45), 12px 0 45px rgba(0, 102, 255, 0.45);
+      border-radius: 20px;
+      width: 92%;
+      max-width: 960px;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      position: relative;
+    }
+
+    .modal-cerrar {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(15, 15, 30, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .modal-cerrar:hover {
+      background: var(--neon-purple);
+      transform: scale(1.08);
+    }
+
+    .modal-img-box {
+      background: #07070f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      min-height: 460px;
+      border-right: 1px solid rgba(139, 44, 245, 0.25);
+    }
+
+    .modal-img-box img {
+      width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .modal-info {
+      padding: 32px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .modal-badges {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .modal-info h3 {
+      font-size: 1.65rem;
+      font-weight: 900;
+      line-height: 1.25;
+      color: #ffffff;
+    }
+
+    .modal-precio {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--neon-cyan);
+    }
+
+    .modal-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .modal-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--steel-silver);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .modal-info select {
+      padding: 12px;
+      font-size: 1rem;
+    }
+
+    .modal-info .btn-compra {
+      padding: 14px;
+      font-size: 1rem;
+      margin-top: 8px;
+    }
+
     footer {
       text-align: center;
       padding: 35px 20px;
       color: var(--text-muted);
       font-size: 0.85rem;
-      border-top: 1px solid rgba(147, 51, 234, 0.15);
+      border-top: 1px solid rgba(139, 44, 245, 0.15);
       background: #040408;
     }
 
@@ -482,20 +788,34 @@
       .hero h2 {
         font-size: 1.9rem;
       }
+      .modal-contenido {
+        grid-template-columns: 1fr;
+        width: 95%;
+      }
+      .modal-img-box {
+        min-height: 300px;
+        border-right: none;
+        border-bottom: 1px solid rgba(139, 44, 245, 0.25);
+      }
+      .modal-img-box img {
+        max-height: 45vh;
+      }
+      .card:hover {
+        transform: scale(1.02);
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="header-logo">
-      <img src="img/logo.jpg" alt="SOMAFITX Logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=100&q=80'">
+    <div class="header-logo" onclick="irInicioCategorias()">
+      <img src="somafitx.jpeg" alt="SOMAFITX Logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=100&q=80'">
       <h1>SOMAFITX</h1>
     </div>
     <nav class="nav-links">
-      <a href="#">Inicio</a>
-      <a href="#catalogo">Catálogo Completo</a>
-      <a href="#colaboraciones">Colaboraciones</a>
+      <a onclick="irInicioCategorias()">Categorías</a>
+      <a onclick="abrirCategoria('Todas')">Ver Todo (316)</a>
     </nav>
     <div class="header-actions">
       <span class="badge-envio">Envíos a todo México</span>
@@ -505,32 +825,58 @@
 
   <section class="hero">
     <div class="hero-content">
-      <img src="img/logo.jpg" alt="SOMAFITX Logo" class="hero-logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=200&q=80'">
+      <img src="somafitx.jpeg" alt="SOMAFITX Logo" class="hero-logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=200&q=80'">
       <h2>SOMAFITX</h2>
-      <h3>Ropa Deportiva &amp; Colaboraciones Exclusivas</h3>
-      <p>Catálogo completo de 315 piezas exclusivas. Filtra por colección o busca tu número de prenda y pide directo por WhatsApp.</p>
-      <a href="#catalogo" class="btn-hero">Explorar 315 Prendas</a>
+      <h3>Suplementos • Ropa Deportiva &amp; Colaboraciones</h3>
+      <p>Elige una colección para explorar sus prendas exclusivas o busca directamente tu diseño favorito.</p>
+      <a href="#catalogo" class="btn-hero" onclick="irInicioCategorias()">Explorar Colecciones</a>
       <div class="lema-bar">
         FUERZA <span>•</span> DISCIPLINA <span>•</span> RESULTADOS
       </div>
     </div>
   </section>
 
-  <h2 class="seccion-titulo" id="catalogo">Catálogo por Colección</h2>
+  <h2 class="seccion-titulo" id="catalogo">Colecciones Exclusivas</h2>
+  <p class="seccion-subtitulo" id="subtitulo-catalogo">Selecciona una categoría para ver todas sus prendas disponibles</p>
 
   <div class="controles-catalogo">
     <div class="buscador-box">
       <input
         type="text"
         id="buscador"
-        placeholder="Buscar por colección, nombre o archivo (ej. prenda-173, Spider-Man)..."
-        oninput="actualizarVista()"
+        placeholder="Buscar prenda por nombre, colección o número (ej. Spider-Man, #173)..."
+        oninput="manejarBusqueda()"
       />
     </div>
-    <div class="filtros-bar" id="filtros-bar"></div>
   </div>
 
-  <main class="contenedor-principal" id="colaboraciones"></main>
+  <main class="contenedor-principal" id="zona-contenido"></main>
+
+  <!-- Visor Modal Grande al hacer clic en cualquier prenda -->
+  <div class="modal-visor" id="modal-visor" onclick="cerrarModalFondo(event)">
+    <div class="modal-contenido">
+      <button class="modal-cerrar" onclick="cerrarModal()" title="Cerrar">✕</button>
+      <div class="modal-img-box">
+        <img id="modal-img" src="" alt="Vista ampliada">
+      </div>
+      <div class="modal-info">
+        <div class="modal-badges">
+          <span class="card-tag" style="position:static;" id="modal-col">Colección</span>
+          <span class="card-code" style="position:static;" id="modal-code">#000</span>
+        </div>
+        <h3 id="modal-nombre">Nombre de la prenda</h3>
+        <p class="modal-precio" id="modal-precio">$1,599 MXN</p>
+        <p class="modal-desc">Pieza original de colección. Selecciona tu talla disponible y realiza tu pedido directo por WhatsApp.</p>
+        <div>
+          <label class="modal-label" for="modal-talla">Selecciona tu talla:</label>
+          <select id="modal-talla"></select>
+        </div>
+        <button class="btn-compra" id="modal-btn-comprar">
+          🛒 Pedir esta prenda por WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
 
   <footer>
     &copy; 2026 SOMAFITX Store &mdash; Todos los derechos reservados.
@@ -862,6 +1208,7 @@
       { id: 314, imagen: "prenda-314.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1799 },
       { id: 315, imagen: "prenda-315.jpg", nombre: "Pants Civil Regime Blue Spiders", coleccion: "Civil Regime", talla: "M", precio: 1799 }
     ];
+
     const ORDEN_COLECCIONES = [
       "Marvel",
       "DC Comics",
@@ -873,6 +1220,19 @@
       "Civil Regime",
       "Otros"
     ];
+
+    // Imagen representativa de portada para cada categoría
+    const PORTADAS_CATEGORIA = {
+      "Marvel": "prenda-030.jpg",
+      "DC Comics": "prenda-183.jpg",
+      "Terror": "prenda-010.jpg",
+      "Disney": "prenda-057.jpg",
+      "Anime": "prenda-041.jpg",
+      "Star Wars": "prenda-269.jpg",
+      "Caricaturas": "prenda-174.jpg",
+      "Civil Regime": "prenda-001.jpg",
+      "Otros": "prenda-290.jpg"
+    };
 
     function parsearTallas(tallaStr) {
       if (!tallaStr) return ["M"];
@@ -890,7 +1250,6 @@
       return `$${Number(precioNum).toLocaleString("es-MX")} MXN`;
     }
 
-    // Construir arreglo unificado compatible con la interfaz
     const todasLasPrendas = PRODUCTOS_CATALOGO.map((item) => {
       const numeroStr = item.imagen.replace("prenda-", "").replace(".jpg", "");
       const codigoExtra = String(item.id).includes(".") ? `#${numeroStr}-B` : `#${numeroStr}`;
@@ -905,102 +1264,219 @@
       };
     });
 
-    let coleccionActiva = "Todas";
+    // Estado de navegación: null = Portada de Categorías | "Marvel", "Todas", etc. = Viendo prendas
+    let categoriaSeleccionada = null;
 
-    const contenedor = document.getElementById("colaboraciones");
-    const filtrosBar = document.getElementById("filtros-bar");
+    const zonaContenido = document.getElementById("zona-contenido");
     const buscadorInput = document.getElementById("buscador");
+    const tituloCatalogo = document.getElementById("catalogo");
+    const subtituloCatalogo = document.getElementById("subtitulo-catalogo");
 
-    function renderFiltros() {
-      const conteoPorColab = {};
-      todasLasPrendas.forEach((p) => {
-        conteoPorColab[p.coleccion] = (conteoPorColab[p.coleccion] || 0) + 1;
-      });
-
-      let html = `<button class="btn-filtro ${coleccionActiva === "Todas" ? "activo" : ""}" onclick="seleccionarFiltro('Todas')">Todas (${todasLasPrendas.length})</button>`;
-
-      ORDEN_COLECCIONES.forEach((col) => {
-        if (conteoPorColab[col]) {
-          const activo = coleccionActiva === col ? "activo" : "";
-          html += `<button class="btn-filtro ${activo}" onclick="seleccionarFiltro('${col.replace(/'/g, "\'")}')">${col} (${conteoPorColab[col]})</button>`;
-        }
-      });
-
-      filtrosBar.innerHTML = html;
+    function irInicioCategorias() {
+      categoriaSeleccionada = null;
+      buscadorInput.value = "";
+      renderizarVista();
+      document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
     }
 
-    function seleccionarFiltro(col) {
-      coleccionActiva = col;
-      renderFiltros();
-      actualizarVista();
+    function abrirCategoria(nombreCat) {
+      categoriaSeleccionada = nombreCat;
+      renderizarVista();
+      document.getElementById("catalogo").scrollIntoView({ behavior: "smooth" });
     }
 
-    function actualizarVista() {
+    function manejarBusqueda() {
+      const q = buscadorInput.value.trim();
+      if (q.length > 0 && categoriaSeleccionada === null) {
+        categoriaSeleccionada = "Todas";
+      } else if (q.length === 0 && categoriaSeleccionada === "Todas") {
+        categoriaSeleccionada = null;
+      }
+      renderizarVista();
+    }
+
+    function renderizarVista() {
       const textoBusqueda = buscadorInput.value.trim().toLowerCase();
-      contenedor.innerHTML = "";
 
-      ORDEN_COLECCIONES.forEach((nombreCol) => {
-        if (coleccionActiva !== "Todas" && coleccionActiva !== nombreCol) return;
+      // MODO 1: PORTADA DE CATEGORÍAS (cuando no se ha dado clic en ninguna categoría)
+      if (categoriaSeleccionada === null && textoBusqueda === "") {
+        tituloCatalogo.textContent = "Colecciones Exclusivas";
+        subtituloCatalogo.textContent = "Haz clic en una categoría para explorar sus prendas";
 
-        const filtradas = todasLasPrendas.filter((p) => {
-          if (p.coleccion !== nombreCol) return false;
-          if (!textoBusqueda) return true;
-          return (
-            p.nombre.toLowerCase().includes(textoBusqueda) ||
-            p.coleccion.toLowerCase().includes(textoBusqueda) ||
-            p.archivo.toLowerCase().includes(textoBusqueda) ||
-            p.codigo.toLowerCase().includes(textoBusqueda)
-          );
+        const conteoPorColab = {};
+        todasLasPrendas.forEach((p) => {
+          conteoPorColab[p.coleccion] = (conteoPorColab[p.coleccion] || 0) + 1;
         });
 
-        if (filtradas.length === 0) return;
+        let tarjetasCategoriasHTML = ORDEN_COLECCIONES.map((col) => {
+          const total = conteoPorColab[col] || 0;
+          if (!total) return "";
+          const imgPortada = PORTADAS_CATEGORIA[col] || "prenda-001.jpg";
+          return `
+            <div class="cat-card" onclick="abrirCategoria('${col.replace(/'/g, "\\'")}')">
+              <img 
+                src="${RUTA_IMG}${imgPortada}" 
+                alt="${col}"
+                loading="lazy"
+                onerror="this.src='https://placehold.co/600x600/0c0c16/00a8ff?text=${encodeURIComponent(col)}'"
+              >
+              <div class="cat-overlay">
+                <span class="cat-count">${total} ${total === 1 ? "prenda" : "prendas"}</span>
+                <h3>${col}</h3>
+                <span class="cat-cta">Ver colección →</span>
+              </div>
+            </div>
+          `;
+        }).join("");
 
-        const cardsHTML = filtradas
-          .map((prod) => {
-            const opcionesTalla = prod.tallas
-              .map((t) => `<option value="${t}">Talla ${t}</option>`)
-              .join("");
+        // Tarjeta extra para ver todo el catálogo junto si el cliente lo desea
+        tarjetasCategoriasHTML += `
+          <div class="cat-card" onclick="abrirCategoria('Todas')">
+            <img 
+              src="somafitx.jpeg" 
+              alt="Catálogo Completo"
+              style="object-fit: contain; padding: 20px; opacity: 0.45;"
+            >
+            <div class="cat-overlay">
+              <span class="cat-count">${todasLasPrendas.length} prendas</span>
+              <h3>Catálogo Completo</h3>
+              <span class="cat-cta">Explorar todas las piezas →</span>
+            </div>
+          </div>
+        `;
 
-            return `
-              <article class="card">
+        zonaContenido.innerHTML = `<div class="grid-categorias">${tarjetasCategoriasHTML}</div>`;
+        return;
+      }
+
+      // MODO 2: VISTA DE PRENDAS DE LA CATEGORÍA SELECCIONADA (O BÚSQUEDA)
+      const esTodas = categoriaSeleccionada === "Todas";
+      tituloCatalogo.textContent = esTodas ? "Catálogo Completo" : `Colección ${categoriaSeleccionada}`;
+      subtituloCatalogo.textContent = "Pasa el cursor sobre una prenda para ampliarla o haz clic en la imagen para verla en grande";
+
+      const filtradas = todasLasPrendas.filter((p) => {
+        const coincideCategoria = esTodas || p.coleccion === categoriaSeleccionada;
+        if (!coincideCategoria) return false;
+        if (!textoBusqueda) return true;
+        return (
+          p.nombre.toLowerCase().includes(textoBusqueda) ||
+          p.coleccion.toLowerCase().includes(textoBusqueda) ||
+          p.archivo.toLowerCase().includes(textoBusqueda) ||
+          p.codigo.toLowerCase().includes(textoBusqueda)
+        );
+      });
+
+      // Barra rápida para cambiar entre categorías sin tener que regresar siempre
+      const botonesRapidos = [`<button class="btn-filtro ${esTodas ? "activo" : ""}" onclick="abrirCategoria('Todas')">Todas</button>`]
+        .concat(
+          ORDEN_COLECCIONES.map((col) => {
+            const act = categoriaSeleccionada === col ? "activo" : "";
+            return `<button class="btn-filtro ${act}" onclick="abrirCategoria('${col.replace(/'/g, "\\'")}')">${col}</button>`;
+          })
+        )
+        .join("");
+
+      const barraSuperiorHTML = `
+        <div class="vista-header">
+          <button class="btn-volver" onclick="irInicioCategorias()">← Volver a Categorías</button>
+          <div class="vista-titulo-grupo">
+            <h3>${esTodas ? "Todas las Colecciones" : categoriaSeleccionada}</h3>
+            <span class="colab-badge">${filtradas.length} ${filtradas.length === 1 ? "pieza" : "piezas"}</span>
+          </div>
+        </div>
+        <div class="filtros-rapidos">${botonesRapidos}</div>
+      `;
+
+      if (filtradas.length === 0) {
+        zonaContenido.innerHTML = barraSuperiorHTML + `<p style="text-align:center; color: var(--text-muted); padding: 40px 0;">No se encontraron prendas con ese criterio de búsqueda.</p>`;
+        return;
+      }
+
+      const cardsHTML = filtradas
+        .map((prod) => {
+          const opcionesTalla = prod.tallas
+            .map((t) => `<option value="${t}">Talla ${t}</option>`)
+            .join("");
+
+          return `
+            <article class="card">
+              <div class="card-img-wrapper" onclick="abrirModalPrenda('${prod.id}')" title="Clic para ampliar">
                 <span class="card-tag">${prod.coleccion}</span>
                 <span class="card-code">${prod.codigo}</span>
                 <img 
                   src="${RUTA_IMG}${prod.archivo}" 
                   alt="${prod.nombre}"
                   loading="lazy"
-                  onerror="this.src='https://placehold.co/600x700/0c0c16/00b4d8?text=${encodeURIComponent(prod.archivo)}'"
+                  onerror="this.src='https://placehold.co/600x700/0c0c16/00a8ff?text=${encodeURIComponent(prod.archivo)}'"
                 >
-                <div class="card-body">
-                  <h4>${prod.nombre}</h4>
-                  <p class="precio">${prod.precio}</p>
-                  <select id="talla-${prod.id}">${opcionesTalla}</select>
-                  <button class="btn-compra" onclick="comprar('${prod.id}')">
-                    🛒 Pedir por WhatsApp
-                  </button>
-                </div>
-              </article>
-            `;
-          })
-          .join("");
+                <span class="zoom-hint">🔍 Clic para ampliar</span>
+              </div>
+              <div class="card-body">
+                <h4>${prod.nombre}</h4>
+                <p class="precio">${prod.precio}</p>
+                <select id="talla-${prod.id}">${opcionesTalla}</select>
+                <button class="btn-compra" onclick="comprar('${prod.id}')">
+                  🛒 Pedir por WhatsApp
+                </button>
+              </div>
+            </article>
+          `;
+        })
+        .join("");
 
-        contenedor.innerHTML += `
-          <section class="bloque-colaboracion">
-            <div class="colab-header">
-              <h3>${nombreCol}</h3>
-              <span class="colab-badge">${filtradas.length} ${filtradas.length === 1 ? "pieza" : "piezas"}</span>
-            </div>
-            <div class="grid-productos">
-              ${cardsHTML}
-            </div>
-          </section>
-        `;
-      });
+      zonaContenido.innerHTML = barraSuperiorHTML + `<div class="grid-productos">${cardsHTML}</div>`;
+    }
 
-      if (contenedor.innerHTML === "") {
-        contenedor.innerHTML = `<p style="text-align:center; color: var(--text-muted); padding: 40px 0;">No se encontraron prendas con ese criterio de búsqueda.</p>`;
+    // === FUNCIONES DEL VISOR MODAL GRANDE ===
+    function abrirModalPrenda(id) {
+      const prod = todasLasPrendas.find((p) => p.id === String(id));
+      if (!prod) return;
+
+      const modalImg = document.getElementById("modal-img");
+      modalImg.src = `${RUTA_IMG}${prod.archivo}`;
+      modalImg.onerror = function() {
+        this.src = `https://placehold.co/800x900/0c0c16/00a8ff?text=${encodeURIComponent(prod.archivo)}`;
+      };
+
+      document.getElementById("modal-col").textContent = prod.coleccion;
+      document.getElementById("modal-code").textContent = prod.codigo;
+      document.getElementById("modal-nombre").textContent = prod.nombre;
+      document.getElementById("modal-precio").textContent = prod.precio;
+
+      const selectCard = document.getElementById(`talla-${prod.id}`);
+      const tallaActual = selectCard ? selectCard.value : prod.tallas[0];
+
+      const modalTallaSelect = document.getElementById("modal-talla");
+      modalTallaSelect.innerHTML = prod.tallas
+        .map((t) => `<option value="${t}" ${t === tallaActual ? "selected" : ""}>Talla ${t}</option>`)
+        .join("");
+
+      document.getElementById("modal-btn-comprar").onclick = function() {
+        const tallaElegida = modalTallaSelect.value;
+        const mensaje = encodeURIComponent(
+          `Hola SOMAFITX, me interesa la prenda ${prod.archivo} (${prod.nombre}) de la colección ${prod.coleccion} en talla ${tallaElegida} (${prod.precio}).`
+        );
+        window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, "_blank");
+      };
+
+      document.getElementById("modal-visor").classList.add("abierto");
+      document.body.style.overflow = "hidden";
+    }
+
+    function cerrarModal() {
+      document.getElementById("modal-visor").classList.remove("abierto");
+      document.body.style.overflow = "";
+    }
+
+    function cerrarModalFondo(event) {
+      if (event.target.id === "modal-visor") {
+        cerrarModal();
       }
     }
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") cerrarModal();
+    });
 
     function comprar(id) {
       const prod = todasLasPrendas.find((p) => p.id === String(id));
@@ -1011,9 +1487,8 @@
       window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, "_blank");
     }
 
-    // Inicializar
-    renderFiltros();
-    actualizarVista();
+    // Iniciar mostrando la portada limpia de categorías
+    renderizarVista();
   </script>
 
 </body>
