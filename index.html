@@ -2277,7 +2277,7 @@
       document.getElementById("modal-btn-comprar").onclick = function() {
         const leyendaPrenda = obtenerLeyendaTipoPrenda(prod);
         const mensaje = encodeURIComponent(
-          `Hola SomafitX, estoy interesado en ${leyendaPrenda} "${prod.nombre}" (${prod.archivo} / ${prod.codigo}) de la colección ${prod.coleccion} en talla ${tallaSeleccionadaModal}, el cual tiene un costo de ${prod.precio}.`
+          `Hola SomafitX, estoy interesado en ${leyendaPrenda} "${prod.nombre}" en talla ${tallaSeleccionadaModal}, el cual tiene un costo de ${prod.precio}.`
         );
         window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, "_blank");
       };
