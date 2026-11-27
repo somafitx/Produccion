@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SOMAFITX | Tienda de Ropa Deportiva & Colaboraciones</title>
+  <title>SOMAFITX | Catálogo Completo &amp; Colaboraciones</title>
   <style>
     :root {
       --bg-dark: #06060c;
@@ -124,7 +124,7 @@
       position: relative;
       background: linear-gradient(145deg, #05050a 0%, #0a0a14 100%);
       border-bottom: 1px solid rgba(147, 51, 234, 0.2);
-      padding: 70px 5%;
+      padding: 60px 5%;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -161,9 +161,9 @@
     }
 
     .hero-logo {
-      width: 180px;
-      height: 180px;
-      margin: 0 auto 20px;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 18px;
       border-radius: 50%;
       border: 3px solid #00b4d8;
       box-shadow: 0 0 30px var(--neon-glow-blue), 0 0 15px var(--neon-glow-purple);
@@ -171,7 +171,7 @@
     }
 
     .hero h2 {
-      font-size: 2.4rem;
+      font-size: 2.3rem;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -182,7 +182,7 @@
     }
 
     .hero h3 {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #00b4d8;
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -194,7 +194,7 @@
       color: var(--text-muted);
       max-width: 580px;
       margin: 0 auto 20px;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
     }
 
     .btn-hero {
@@ -217,7 +217,7 @@
     }
 
     .lema-bar {
-      margin-top: 24px;
+      margin-top: 22px;
       font-size: 0.8rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -251,24 +251,52 @@
       border-radius: 2px;
     }
 
-    /* Barra de filtros por colaboración */
-    .filtros-bar {
-      max-width: 1140px;
-      margin: 0 auto 35px;
+    .controles-catalogo {
+      max-width: 1180px;
+      margin: 0 auto 30px;
       padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .buscador-box {
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .buscador-box input {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 180, 216, 0.4);
+      background: var(--bg-input);
+      color: var(--text-main);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .buscador-box input:focus {
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 15px rgba(0, 180, 216, 0.25);
+    }
+
+    .filtros-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .btn-filtro {
       background: var(--bg-card);
       color: var(--text-muted);
       border: 1px solid rgba(0, 180, 216, 0.3);
-      padding: 8px 16px;
+      padding: 7px 15px;
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.2s;
@@ -283,7 +311,7 @@
     }
 
     .contenedor-principal {
-      max-width: 1140px;
+      max-width: 1180px;
       margin: 0 auto 60px;
       padding: 0 20px;
     }
@@ -325,8 +353,8 @@
 
     .grid-productos {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 22px;
     }
 
     .card {
@@ -355,50 +383,64 @@
       backdrop-filter: blur(6px);
       color: #00b4d8;
       border: 1px solid rgba(0, 180, 216, 0.4);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: 6px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      z-index: 2;
+    }
+
+    .card-code {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(6, 6, 12, 0.85);
+      color: var(--text-muted);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      z-index: 2;
     }
 
     .card img {
       width: 100%;
-      height: 310px;
+      height: 300px;
       object-fit: cover;
       background: #10101f;
       border-bottom: 1px solid rgba(147, 51, 234, 0.2);
     }
 
     .card-body {
-      padding: 18px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
       flex: 1;
     }
 
     .card-body h4 {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
       color: var(--text-main);
     }
 
     .precio {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 800;
       color: #00b4d8;
     }
 
     select {
-      padding: 9px;
+      padding: 8px;
       border-radius: 8px;
       border: 1px solid rgba(147, 51, 234, 0.4);
       background: var(--bg-input);
       color: var(--text-main);
       width: 100%;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       outline: none;
     }
 
@@ -410,10 +452,10 @@
       background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
       color: #fff;
       border: none;
-      padding: 12px;
+      padding: 11px;
       border-radius: 8px;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       cursor: pointer;
       margin-top: auto;
       box-shadow: 0 4px 14px rgba(147, 51, 234, 0.35);
@@ -452,7 +494,7 @@
     </div>
     <nav class="nav-links">
       <a href="#">Inicio</a>
-      <a href="#catalogo">Colección</a>
+      <a href="#catalogo">Catálogo Completo</a>
       <a href="#colaboraciones">Colaboraciones</a>
     </nav>
     <div class="header-actions">
@@ -466,20 +508,28 @@
       <img src="img/logo.jpg" alt="SOMAFITX Logo" class="hero-logo" onerror="this.src='https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=200&q=80'">
       <h2>SOMAFITX</h2>
       <h3>Ropa Deportiva &amp; Colaboraciones Exclusivas</h3>
-      <p>Prendas diseñadas para entrenar al máximo y vestir con estilo todos los días. Elige tu pieza de edición especial y pide directo por WhatsApp.</p>
-      <a href="#catalogo" class="btn-hero">Ver Catálogo</a>
+      <p>Catálogo completo de 315 piezas exclusivas. Filtra por colección o busca tu número de prenda y pide directo por WhatsApp.</p>
+      <a href="#catalogo" class="btn-hero">Explorar 315 Prendas</a>
       <div class="lema-bar">
         FUERZA <span>•</span> DISCIPLINA <span>•</span> RESULTADOS
       </div>
     </div>
   </section>
 
-  <h2 class="seccion-titulo" id="catalogo">Drop &amp; Colaboraciones</h2>
+  <h2 class="seccion-titulo" id="catalogo">Catálogo por Colección</h2>
 
-  <!-- Filtros rápidos por colaboración -->
-  <div class="filtros-bar" id="filtros-bar"></div>
+  <div class="controles-catalogo">
+    <div class="buscador-box">
+      <input
+        type="text"
+        id="buscador"
+        placeholder="Buscar por colección, nombre o archivo (ej. prenda-173, Spider-Man)..."
+        oninput="actualizarVista()"
+      />
+    </div>
+    <div class="filtros-bar" id="filtros-bar"></div>
+  </div>
 
-  <!-- Contenedor dinámico de colaboraciones y prendas -->
   <main class="contenedor-principal" id="colaboraciones"></main>
 
   <footer>
@@ -490,176 +540,443 @@
     // 1. Cambia este número por tu WhatsApp (código de país + número sin espacios)
     const TELEFONO_WHATSAPP = "525500000000";
 
-    // 2. Ruta base de tus imágenes (relativa a tu carpeta Produccion en GitHub / local)
+    // 2. Ruta de la carpeta de imágenes
     const RUTA_IMG = "img/";
 
-    // 3. Catálogo agrupado por colaboración
-    const colaboraciones = [
-      {
-        titulo: "Chainsaw Man",
-        productos: [
-          {
-            nombre: "Chainsaw Man (Edición 173)",
-            precio: "$1,599 MXN",
-            imagen: "prenda-173.jpg",
-            tallas: ["L"]
-          },
-          {
-            nombre: "Chainsaw Man (Edición 134)",
-            precio: "$1,599 MXN",
-            imagen: "prenda-134.jpg",
-            tallas: ["M"]
-          },
-          {
-            nombre: "Chainsaw Man (Edición 144)",
-            precio: "$1,599 MXN",
-            imagen: "prenda-144.jpg",
-            tallas: ["M"]
-          }
-        ]
-      },
-      {
-        titulo: "Disney - Mickey Mouse",
-        productos: [
-          {
-            nombre: "Disney Mickey Mouse",
-            precio: "$1,599 MXN",
-            imagen: "prenda-213.jpg",
-            tallas: ["M"]
-          }
-        ]
-      },
-      {
-        titulo: "Disney - The Nightmare Before Christmas",
-        productos: [
-          {
-            nombre: "Tim Burton's The Nightmare Before Christmas",
-            precio: "$1,599 MXN",
-            imagen: "prenda-043.jpg",
-            tallas: ["S", "M"]
-          },
-          {
-            nombre: "Tim Burton's The Nightmare Before Christmas (Jack Skellington)",
-            precio: "$1,599 MXN",
-            imagen: "prenda-156.jpg",
-            tallas: ["M"]
-          }
-        ]
-      },
-      {
-        titulo: "IT Chapter Two",
-        productos: [
-          {
-            nombre: "IT Chapter Two (Pennywise)",
-            precio: "$1,599 MXN",
-            imagen: "prenda-014.jpg",
-            tallas: ["M"]
-          },
-          {
-            nombre: "IT Chapter Two",
-            precio: "$1,599 MXN",
-            imagen: "prenda-177.jpg",
-            tallas: ["M"]
-          }
-        ]
-      },
-      {
-        titulo: "Misfits",
-        productos: [
-          {
-            nombre: "Misfits (Static Age)",
-            precio: "$1,599 MXN",
-            imagen: "prenda-073.jpg",
-            tallas: ["M"]
-          }
-        ]
-      },
-      {
-        titulo: "Spider-Man / Marvel",
-        productos: [
-          {
-            nombre: "Spider-Man Protector of NYC",
-            precio: "$3,899 MXN",
-            imagen: "prenda-191.jpg",
-            tallas: ["M"]
-          }
-        ]
-      },
-      {
-        titulo: "Street Fighter",
-        productos: [
-          {
-            nombre: "Street Fighter Champion Edition",
-            precio: "$1,799 MXN",
-            imagen: "prenda-237.jpg",
-            tallas: ["M"]
-          }
-        ]
-      },
-      {
-        titulo: "The Lost Boys",
-        productos: [
-          {
-            nombre: "The Lost Boys / Vampire",
-            precio: "$1,599 MXN",
-            imagen: "prenda-114.jpg",
-            tallas: ["M"]
-          }
-        ]
-      },
-      {
-        titulo: "The Mummy",
-        productos: [
-          {
-            nombre: "The Mummy (Amon Ra)",
-            precio: "$1,599 MXN",
-            imagen: "prenda-136.jpg",
-            tallas: ["L"]
-          }
-        ]
-      }
+    // 3. Catálogo completo unificado (Prenda 001 a Prenda 315)
+    const PRODUCTOS_CATALOGO = [
+      { id: 1, imagen: "prenda-001.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 2, imagen: "prenda-002.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 3, imagen: "prenda-003.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1599 },
+      { id: 4, imagen: "prenda-004.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 5, imagen: "prenda-005.jpg", nombre: "Disney Villains", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 6, imagen: "prenda-006.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 7, imagen: "prenda-007.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1599 },
+      { id: 8, imagen: "prenda-008.jpg", nombre: "Disney", coleccion: "Disney", talla: "S, M, L y XL", precio: 1099 },
+      { id: 9, imagen: "prenda-009.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 10, imagen: "prenda-010.jpg", nombre: "Ghostface / Scream", coleccion: "Terror", talla: "S, M, L y XL", precio: 1599 },
+      { id: 11, imagen: "prenda-011.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 12, imagen: "prenda-012.jpg", nombre: "Ghostface / Scream", coleccion: "Terror", talla: "S, M, L y XL", precio: 1599 },
+      { id: 13, imagen: "prenda-013.jpg", nombre: "IT Chapter Two / Derry", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 14, imagen: "prenda-014.jpg", nombre: "IT Chapter Two (Pennywise)", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 15, imagen: "prenda-015.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 16, imagen: "prenda-016.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 17, imagen: "prenda-017.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1599 },
+      { id: 18, imagen: "prenda-018.jpg", nombre: "Ghostface / Scream", coleccion: "Terror", talla: "S, M, L y XL", precio: 1599 },
+      { id: 19, imagen: "prenda-019.jpg", nombre: "Halloween / Michael Myers", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 20, imagen: "prenda-020.jpg", nombre: "IT Chapter Two / Derry", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 21, imagen: "prenda-021.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 22, imagen: "prenda-022.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 23, imagen: "prenda-023.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1599 },
+      { id: 24, imagen: "prenda-024.jpg", nombre: "Elvira Mistress of the Dark", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 25, imagen: "prenda-025.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 26, imagen: "prenda-026.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 27, imagen: "prenda-027.jpg", nombre: "Ghostface / Scream", coleccion: "Terror", talla: "M y L", precio: 1599 },
+      { id: 28, imagen: "prenda-028.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 29, imagen: "prenda-029.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 30, imagen: "prenda-030.jpg", nombre: "Marvel / Spider-Man Box Set", coleccion: "Marvel", talla: "M", precio: 4800 },
+      { id: 31, imagen: "prenda-031.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 32, imagen: "prenda-032.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1599 },
+      { id: 33, imagen: "prenda-033.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 34, imagen: "prenda-034.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 35, imagen: "prenda-035.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 36, imagen: "prenda-036.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 37, imagen: "prenda-037.jpg", nombre: "Halloween II Hoodie", coleccion: "Terror", talla: "L", precio: 2699 },
+      { id: 38, imagen: "prenda-038.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 39, imagen: "prenda-039.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 40, imagen: "prenda-040.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 41, imagen: "prenda-041.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 42, imagen: "prenda-042.jpg", nombre: "Marvel / Avengers", coleccion: "Marvel", talla: "M", precio: 1599 },
+      { id: 43, imagen: "prenda-043.jpg", nombre: "The Nightmare Before Christmas", coleccion: "Disney", talla: "S y M", precio: 1599 },
+      { id: 44, imagen: "prenda-044.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 45, imagen: "prenda-045.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 46, imagen: "prenda-046.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 47, imagen: "prenda-047.jpg", nombre: "The Lost Boys", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 48, imagen: "prenda-048.jpg", nombre: "Elvira", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 49, imagen: "prenda-049.jpg", nombre: "Ghostface / Scream", coleccion: "Terror", talla: "S, M, L y XL", precio: 1599 },
+      { id: 50, imagen: "prenda-050.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 51, imagen: "prenda-051.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 52, imagen: "prenda-052.jpg", nombre: "Halloween II", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 53, imagen: "prenda-053.jpg", nombre: "The Punisher", coleccion: "Marvel", talla: "XL", precio: 1599 },
+      { id: 54, imagen: "prenda-054.jpg", nombre: "The Nightmare Before Christmas", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 55, imagen: "prenda-055.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 56, imagen: "prenda-056.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 57, imagen: "prenda-057.jpg", nombre: "The Nightmare Before Christmas Hoodie", coleccion: "Disney", talla: "M y L", precio: 2699 },
+      { id: 58, imagen: "prenda-058.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 59, imagen: "prenda-059.jpg", nombre: "Halloween II Hoodie", coleccion: "Terror", talla: "L", precio: 2699 },
+      { id: 60, imagen: "prenda-060.jpg", nombre: "Disney Villains", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 61, imagen: "prenda-061.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 62, imagen: "prenda-062.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 63, imagen: "prenda-063.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 64, imagen: "prenda-064.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 65, imagen: "prenda-065.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 66, imagen: "prenda-066.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 67, imagen: "prenda-067.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 68, imagen: "prenda-068.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 69, imagen: "prenda-069.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 70, imagen: "prenda-070.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 71, imagen: "prenda-071.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 72, imagen: "prenda-072.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 73, imagen: "prenda-073.jpg", nombre: "The Misfits Static Age", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 74, imagen: "prenda-074.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 75, imagen: "prenda-075.jpg", nombre: "Friday the 13th", coleccion: "Terror", talla: "S, M, L y XL", precio: 1599 },
+      { id: 76, imagen: "prenda-076.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 77, imagen: "prenda-077.jpg", nombre: "The Exorcist", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 78, imagen: "prenda-078.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 79, imagen: "prenda-079.jpg", nombre: "Disney Villains", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 80, imagen: "prenda-080.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 81, imagen: "prenda-081.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 82, imagen: "prenda-082.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 83, imagen: "prenda-083.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 84, imagen: "prenda-084.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 85, imagen: "prenda-085.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 86, imagen: "prenda-086.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 87, imagen: "prenda-087.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 88, imagen: "prenda-088.jpg", nombre: "The Nightmare Before Christmas", coleccion: "Disney", talla: "M y L", precio: 1599 },
+      { id: 89, imagen: "prenda-089.jpg", nombre: "The Nightmare Before Christmas Beanie", coleccion: "Disney", talla: "Unitalla", precio: 1099 },
+      { id: 90, imagen: "prenda-090.jpg", nombre: "The Nightmare Before Christmas Beanie", coleccion: "Disney", talla: "Unitalla", precio: 1049 },
+      { id: 91, imagen: "prenda-091.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 92, imagen: "prenda-092.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 93, imagen: "prenda-093.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 94, imagen: "prenda-094.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 95, imagen: "prenda-095.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 96, imagen: "prenda-096.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 97, imagen: "prenda-097.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 98, imagen: "prenda-098.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 99, imagen: "prenda-099.jpg", nombre: "The Lost Boys", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 100, imagen: "prenda-100.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 101, imagen: "prenda-101.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 102, imagen: "prenda-102.jpg", nombre: "The Nightmare Before Christmas Beanie", coleccion: "Disney", talla: "Unitalla", precio: 1099 },
+      { id: 103, imagen: "prenda-103.jpg", nombre: "Slayer", coleccion: "Otros", talla: "L", precio: 1599 },
+      { id: 104, imagen: "prenda-104.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 105, imagen: "prenda-105.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 106, imagen: "prenda-106.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 107, imagen: "prenda-107.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 108, imagen: "prenda-108.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 109, imagen: "prenda-109.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 110, imagen: "prenda-110.jpg", nombre: "Mickey Mouse", coleccion: "Disney", talla: "M y L", precio: 1599 },
+      { id: 111, imagen: "prenda-111.jpg", nombre: "Danhausen", coleccion: "Otros", talla: "S, M, L y XL", precio: 1599 },
+      { id: 112, imagen: "prenda-112.jpg", nombre: "The Punisher", coleccion: "Marvel", talla: "L", precio: 1599 },
+      { id: 113, imagen: "prenda-113.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 114, imagen: "prenda-114.jpg", nombre: "The Lost Boys / Vampire", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 115, imagen: "prenda-115.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 116, imagen: "prenda-116.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 117, imagen: "prenda-117.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 118, imagen: "prenda-118.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 119, imagen: "prenda-119.jpg", nombre: "Mickey & Friends", coleccion: "Disney", talla: "L", precio: 1599 },
+      { id: 120, imagen: "prenda-120.jpg", nombre: "Mickey Mouse", coleccion: "Disney", talla: "S, M y L", precio: 1599 },
+      { id: 121, imagen: "prenda-121.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 122, imagen: "prenda-122.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 123, imagen: "prenda-123.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 124, imagen: "prenda-124.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 125, imagen: "prenda-125.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 126, imagen: "prenda-126.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 127, imagen: "prenda-127.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 128, imagen: "prenda-128.jpg", nombre: "Spider-Man", coleccion: "Marvel", talla: "M", precio: 1599 },
+      { id: 129, imagen: "prenda-129.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 130, imagen: "prenda-130.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 131, imagen: "prenda-131.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 132, imagen: "prenda-132.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 133, imagen: "prenda-133.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 134, imagen: "prenda-134.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 135, imagen: "prenda-135.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 136, imagen: "prenda-136.jpg", nombre: "The Mummy (Amon Ra)", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 137, imagen: "prenda-137.jpg", nombre: "IT Chapter Two", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 138, imagen: "prenda-138.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 139, imagen: "prenda-139.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 140, imagen: "prenda-140.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 141, imagen: "prenda-141.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 142, imagen: "prenda-142.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 143, imagen: "prenda-143.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 144, imagen: "prenda-144.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 145, imagen: "prenda-145.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 146, imagen: "prenda-146.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 147, imagen: "prenda-147.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 148, imagen: "prenda-148.jpg", nombre: "Danhausen", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 149, imagen: "prenda-149.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 150, imagen: "prenda-150.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 151, imagen: "prenda-151.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 152, imagen: "prenda-152.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 153, imagen: "prenda-153.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 154, imagen: "prenda-154.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 155, imagen: "prenda-155.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 156, imagen: "prenda-156.jpg", nombre: "The Nightmare Before Christmas (Jack Skellington)", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 157, imagen: "prenda-157.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 158, imagen: "prenda-158.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 159, imagen: "prenda-159.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 160, imagen: "prenda-160.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 161, imagen: "prenda-161.jpg", nombre: "Daredevil Elektra Grave", coleccion: "Marvel", talla: "S y L", precio: 1599 },
+      { id: 162, imagen: "prenda-162.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1799 },
+      { id: 163, imagen: "prenda-163.jpg", nombre: "Venom Varsity Jacket", coleccion: "Marvel", talla: "M y L", precio: 3899 },
+      { id: 164, imagen: "prenda-164.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 2099 },
+      { id: 165, imagen: "prenda-165.jpg", nombre: "Jujutsu Kaisen", coleccion: "Anime", talla: "L", precio: 1599 },
+      { id: 166, imagen: "prenda-166.jpg", nombre: "The Exorcist I'm Not Regan", coleccion: "Terror", talla: "XL", precio: 1599 },
+      { id: 167, imagen: "prenda-167.jpg", nombre: "Goosebumps Revenge of the Lawn Gnomes", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 168, imagen: "prenda-168.jpg", nombre: "Nightmare Before Christmas Pinstripe Jacket", coleccion: "Disney", talla: "L", precio: 4799 },
+      { id: 169, imagen: "prenda-169.jpg", nombre: "Slayer Show No Mercy", coleccion: "Otros", talla: "L", precio: 1599 },
+      { id: 170, imagen: "prenda-170.jpg", nombre: "Nightmare Before Christmas Master of Fright", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 171, imagen: "prenda-171.jpg", nombre: "Spider-Man Black Suit", coleccion: "Marvel", talla: "S, M y L", precio: 1599 },
+      { id: 172, imagen: "prenda-172.jpg", nombre: "Civil Regime Full Zip Hoodie", coleccion: "Civil Regime", talla: "S", precio: 3399 },
+      { id: 173, imagen: "prenda-173.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M y L", precio: 1599 },
+      { id: 174, imagen: "prenda-174.jpg", nombre: "SpongeBob SquarePants", coleccion: "Caricaturas", talla: "M", precio: 1599 },
+      { id: 175, imagen: "prenda-175.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M y L", precio: 1599 },
+      { id: 176, imagen: "prenda-176.jpg", nombre: "Mickey Mouse Spiderwebs Black", coleccion: "Disney", talla: "L", precio: 1599 },
+      { id: 177, imagen: "prenda-177.jpg", nombre: "IT Chapter Two Come Home", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 178, imagen: "prenda-178.jpg", nombre: "Mortal Kombat Jacket", coleccion: "Otros", talla: "L", precio: 3899 },
+      { id: 179, imagen: "prenda-179.jpg", nombre: "Friday the 13th Jason Full Zip Hoodie", coleccion: "Terror", talla: "L", precio: 3599 },
+      { id: 180, imagen: "prenda-180.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "L", precio: 1599 },
+      { id: 181, imagen: "prenda-181.jpg", nombre: "Spider-Verse Locker Box Set", coleccion: "Marvel", talla: "M y L", precio: 5800 },
+      { id: 182, imagen: "prenda-182.jpg", nombre: "Marvel Kids Tee", coleccion: "Marvel", talla: "S Kids", precio: 1299 },
+      { id: 183, imagen: "prenda-183.jpg", nombre: "Batman Hoodie", coleccion: "DC Comics", talla: "S, M y L", precio: 2499 },
+      { id: 184, imagen: "prenda-184.jpg", nombre: "Wolverine Skulls & Claws", coleccion: "Marvel", talla: "M", precio: 1599 },
+      { id: 185, imagen: "prenda-185.jpg", nombre: "One Piece Hoodie", coleccion: "Anime", talla: "S", precio: 2699 },
+      { id: 186, imagen: "prenda-186.jpg", nombre: "Star Wars", coleccion: "Star Wars", talla: "M", precio: 1599 },
+      { id: 187, imagen: "prenda-187.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 188, imagen: "prenda-188.jpg", nombre: "Pants Civil Regime Skeleton Bones", coleccion: "Civil Regime", talla: "L", precio: 4799 },
+      { id: 189, imagen: "prenda-189.jpg", nombre: "Mickey Mouse Red Spiderwebs", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 190, imagen: "prenda-190.jpg", nombre: "Wolverine Zombie Hand", coleccion: "Marvel", talla: "L", precio: 1599 },
+      { id: 191, imagen: "prenda-191.jpg", nombre: "Spider-Man Protector of NYC Jacket", coleccion: "Marvel", talla: "M", precio: 3899 },
+      { id: 192, imagen: "prenda-192.jpg", nombre: "Elvira Full Zip Hoodie", coleccion: "Terror", talla: "M", precio: 2699 },
+      { id: 193, imagen: "prenda-193.jpg", nombre: "Street Fighter Rescue", coleccion: "Otros", talla: "L", precio: 1299 },
+      { id: 194, imagen: "prenda-194.jpg", nombre: "Halloween II Pumpkin Skull", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 195, imagen: "prenda-195.jpg", nombre: "Hoodie Civil Regime Red", coleccion: "Civil Regime", talla: "L", precio: 1799 },
+      { id: 195.1, imagen: "prenda-195.jpg", nombre: "Jogger Civil Regime Red", coleccion: "Civil Regime", talla: "L", precio: 1799 },
+      { id: 196, imagen: "prenda-196.jpg", nombre: "The Misfits Fiend Club", coleccion: "Otros", talla: "L", precio: 1599 },
+      { id: 197, imagen: "prenda-197.jpg", nombre: "Sally White Stitches", coleccion: "Disney", talla: "M y L", precio: 1599 },
+      { id: 198, imagen: "prenda-198.jpg", nombre: "SpongeBob SquarePants", coleccion: "Caricaturas", talla: "M", precio: 1599 },
+      { id: 199, imagen: "prenda-199.jpg", nombre: "Jujutsu Kaisen Suguru Geto", coleccion: "Anime", talla: "L", precio: 1599 },
+      { id: 200, imagen: "prenda-200.jpg", nombre: "Spider-Man Classic White", coleccion: "Marvel", talla: "M", precio: 1599 },
+      { id: 201, imagen: "prenda-201.jpg", nombre: "Mortal Kombat Sub-Zero", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 202, imagen: "prenda-202.jpg", nombre: "Civil Regime Kanji", coleccion: "Civil Regime", talla: "S", precio: 1799 },
+      { id: 203, imagen: "prenda-203.jpg", nombre: "Texas Chainsaw Massacre Leatherface", coleccion: "Terror", talla: "M y L", precio: 1599 },
+      { id: 204, imagen: "prenda-204.jpg", nombre: "SpongeBob Flying Dutchman Beanie", coleccion: "Caricaturas", talla: "Unitalla", precio: 1099 },
+      { id: 205, imagen: "prenda-205.jpg", nombre: "Spider-Man Forever White Hoodie", coleccion: "Marvel", talla: "M, L y XL", precio: 2599 },
+      { id: 206, imagen: "prenda-206.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 207, imagen: "prenda-207.jpg", nombre: "Beetlejuice Purple Tie-Dye Hoodie", coleccion: "Terror", talla: "M y L", precio: 2699 },
+      { id: 208, imagen: "prenda-208.jpg", nombre: "Street Fighter Ryu White", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 209, imagen: "prenda-209.jpg", nombre: "Danhausen Full Zip Hoodie", coleccion: "Otros", talla: "L", precio: 3899 },
+      { id: 210, imagen: "prenda-210.jpg", nombre: "Elvira Mistress of the Dark Purple", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 211, imagen: "prenda-211.jpg", nombre: "Civil Regime Burn in Hell Jacket", coleccion: "Civil Regime", talla: "L", precio: 3899 },
+      { id: 212, imagen: "prenda-212.jpg", nombre: "Texas Chainsaw Massacre Hoodie", coleccion: "Terror", talla: "M y L", precio: 2699 },
+      { id: 213, imagen: "prenda-213.jpg", nombre: "Mickey Mouse Orange Skeleton", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 214, imagen: "prenda-214.jpg", nombre: "Ghost Face Green Flames Hoodie", coleccion: "Terror", talla: "M y L", precio: 2699 },
+      { id: 215, imagen: "prenda-215.jpg", nombre: "Street Fighter Guile Camo", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 216, imagen: "prenda-216.jpg", nombre: "A Nightmare on Elm Street", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 217, imagen: "prenda-217.jpg", nombre: "Nightmare Before Christmas White Hoodie", coleccion: "Disney", talla: "M y L", precio: 2699 },
+      { id: 218, imagen: "prenda-218.jpg", nombre: "WWE Rhea Ripley", coleccion: "Otros", talla: "S y M", precio: 1599 },
+      { id: 219, imagen: "prenda-219.jpg", nombre: "Leatherface Full Zip Hoodie", coleccion: "Terror", talla: "M y L", precio: 3899 },
+      { id: 220, imagen: "prenda-220.jpg", nombre: "Chainsaw Man Spider Devil", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 221, imagen: "prenda-221.jpg", nombre: "Oogie Boogie Black", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 222, imagen: "prenda-222.jpg", nombre: "Chainsaw Man Box Set", coleccion: "Anime", talla: "M y L", precio: 4800 },
+      { id: 223, imagen: "prenda-223.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 224, imagen: "prenda-224.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1849 },
+      { id: 225, imagen: "prenda-225.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "XL", precio: 1599 },
+      { id: 226, imagen: "prenda-226.jpg", nombre: "Chainsaw Man Makima", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 227, imagen: "prenda-227.jpg", nombre: "WWE Rhea Ripley Gothic Frame", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 228, imagen: "prenda-228.jpg", nombre: "Street Fighter Sketch White", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 229, imagen: "prenda-229.jpg", nombre: "Goosebumps Night of the Living Dummy", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 230, imagen: "prenda-230.jpg", nombre: "Scream Ghost Face Mask", coleccion: "Terror", talla: "S, M y L", precio: 1599 },
+      { id: 231, imagen: "prenda-231.jpg", nombre: "Daredevil Red Vintage", coleccion: "Marvel", talla: "L y XL", precio: 1599 },
+      { id: 232, imagen: "prenda-232.jpg", nombre: "Superman Red Tie-Dye Long Sleeve", coleccion: "DC Comics", talla: "M", precio: 1799 },
+      { id: 233, imagen: "prenda-233.jpg", nombre: "Frankenstein Monster", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 234, imagen: "prenda-234.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1599 },
+      { id: 235, imagen: "prenda-235.jpg", nombre: "Wolverine Zombie", coleccion: "Marvel", talla: "M", precio: 1599 },
+      { id: 236, imagen: "prenda-236.jpg", nombre: "Green Lantern Skull", coleccion: "DC Comics", talla: "M", precio: 1599 },
+      { id: 237, imagen: "prenda-237.jpg", nombre: "Street Fighter Long Sleeve", coleccion: "Otros", talla: "M", precio: 1799 },
+      { id: 238, imagen: "prenda-238.jpg", nombre: "Pants Civil Regime White", coleccion: "Civil Regime", talla: "M", precio: 1799 },
+      { id: 239, imagen: "prenda-239.jpg", nombre: "Bleach Toshiro & Hyorinmaru Layered Tee", coleccion: "Anime", talla: "S", precio: 1699 },
+      { id: 240, imagen: "prenda-240.jpg", nombre: "The Misfits Green Skull Long Sleeve", coleccion: "Otros", talla: "M y L", precio: 1799 },
+      { id: 241, imagen: "prenda-241.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 242, imagen: "prenda-242.jpg", nombre: "IT Pennywise Red Balloons", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 243, imagen: "prenda-243.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M y L", precio: 1599 },
+      { id: 244, imagen: "prenda-244.jpg", nombre: "The Powerpuff Girls Mojo Jojo", coleccion: "Caricaturas", talla: "S y L", precio: 1599 },
+      { id: 245, imagen: "prenda-245.jpg", nombre: "Star Wars", coleccion: "Star Wars", talla: "M", precio: 1849 },
+      { id: 246, imagen: "prenda-246.jpg", nombre: "Star Wars", coleccion: "Star Wars", talla: "L", precio: 1599 },
+      { id: 247, imagen: "prenda-247.jpg", nombre: "Sally Patchwork Hoodie", coleccion: "Disney", talla: "M y L", precio: 2699 },
+      { id: 248, imagen: "prenda-248.jpg", nombre: "Harley Quinn Mad Love", coleccion: "DC Comics", talla: "M", precio: 1599 },
+      { id: 249, imagen: "prenda-249.jpg", nombre: "Nightmare Before Christmas Pinstripe Full Zip Hoodie", coleccion: "Disney", talla: "S, M y L", precio: 2599 },
+      { id: 250, imagen: "prenda-250.jpg", nombre: "Elvira Mistress of the Dark Car", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 251, imagen: "prenda-251.jpg", nombre: "Mortal Kombat Shao Kahn", coleccion: "Otros", talla: "L", precio: 1599 },
+      { id: 252, imagen: "prenda-252.jpg", nombre: "Civil Regime Skeleton Ribcage Jacket", coleccion: "Civil Regime", talla: "L", precio: 4799 },
+      { id: 253, imagen: "prenda-253.jpg", nombre: "Marvel Zombies Spider-Man", coleccion: "Marvel", talla: "M", precio: 1599 },
+      { id: 254, imagen: "prenda-254.jpg", nombre: "Jack Skellington R.I.P. Tombstone", coleccion: "Disney", talla: "M", precio: 1599 },
+      { id: 255, imagen: "prenda-255.jpg", nombre: "SpongeBob Squidward Tattoo Sleeves", coleccion: "Caricaturas", talla: "XL", precio: 1800 },
+      { id: 256, imagen: "prenda-256.jpg", nombre: "WWE Liv Morgan Watch Me Liv", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 257, imagen: "prenda-257.jpg", nombre: "Jack Skellington Pumpkin White", coleccion: "Disney", talla: "M, L y XL", precio: 1599 },
+      { id: 258, imagen: "prenda-258.jpg", nombre: "Jack Skellington Orange Bats", coleccion: "Disney", talla: "S, M y L", precio: 1599 },
+      { id: 259, imagen: "prenda-259.jpg", nombre: "Superman Red Tribal Hoodie", coleccion: "DC Comics", talla: "M y L", precio: 2499 },
+      { id: 260, imagen: "prenda-260.jpg", nombre: "IT Pennywise", coleccion: "Terror", talla: "M, L y XL", precio: 1899 },
+      { id: 261, imagen: "prenda-261.jpg", nombre: "Nightmare Before Christmas Spiral Hill Jacket", coleccion: "Disney", talla: "M", precio: 4899 },
+      { id: 262, imagen: "prenda-262.jpg", nombre: "Hoodie Civil Regime Red Zip", coleccion: "Civil Regime", talla: "M", precio: 1799 },
+      { id: 263, imagen: "prenda-263.jpg", nombre: "IT Welcome to Derry", coleccion: "Terror", talla: "M", precio: 1599 },
+      { id: 264, imagen: "prenda-264.jpg", nombre: "Goosebumps Welcome to HorrorLand", coleccion: "Terror", talla: "L", precio: 1599 },
+      { id: 265, imagen: "prenda-265.jpg", nombre: "Street Fighter Sleeveless", coleccion: "Otros", talla: "M", precio: 1679 },
+      { id: 266, imagen: "prenda-266.jpg", nombre: "Civil Regime México", coleccion: "Civil Regime", talla: "M, L y XL", precio: 1599 },
+      { id: 267, imagen: "prenda-267.jpg", nombre: "SpongeBob Skull Beanie", coleccion: "Caricaturas", talla: "Unitalla", precio: 1099 },
+      { id: 268, imagen: "prenda-268.jpg", nombre: "Jujutsu Kaisen Shibuya Incident", coleccion: "Anime", talla: "L", precio: 1599 },
+      { id: 269, imagen: "prenda-269.jpg", nombre: "Star Wars Darth Vader", coleccion: "Star Wars", talla: "S y L", precio: 1599 },
+      { id: 270, imagen: "prenda-270.jpg", nombre: "Pants Star Wars", coleccion: "Star Wars", talla: "34", precio: 2199 },
+      { id: 271, imagen: "prenda-271.jpg", nombre: "WWE Penta Full Zip Hoodie", coleccion: "Otros", talla: "M", precio: 3399 },
+      { id: 272, imagen: "prenda-272.jpg", nombre: "WWE nWo New World Order", coleccion: "Otros", talla: "M", precio: 1699 },
+      { id: 273, imagen: "prenda-273.jpg", nombre: "WWE Rey Fenix Red", coleccion: "Otros", talla: "L", precio: 1599 },
+      { id: 274, imagen: "prenda-274.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 275, imagen: "prenda-275.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1749 },
+      { id: 276, imagen: "prenda-276.jpg", nombre: "Bratz", coleccion: "Caricaturas", talla: "M", precio: 1599 },
+      { id: 277, imagen: "prenda-277.jpg", nombre: "Bratz", coleccion: "Caricaturas", talla: "M", precio: 1599 },
+      { id: 278, imagen: "prenda-278.jpg", nombre: "Pants Civil Regime", coleccion: "Civil Regime", talla: "34", precio: 2299 },
+      { id: 279, imagen: "prenda-279.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1599 },
+      { id: 280, imagen: "prenda-280.jpg", nombre: "Godzilla Green Lightning", coleccion: "Otros", talla: "L", precio: 1599 },
+      { id: 281, imagen: "prenda-281.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1599 },
+      { id: 282, imagen: "prenda-282.jpg", nombre: "King Kong Red Lightning", coleccion: "Otros", talla: "L", precio: 1599 },
+      { id: 283, imagen: "prenda-283.jpg", nombre: "Pants Godzilla", coleccion: "Otros", talla: "L", precio: 2299 },
+      { id: 284, imagen: "prenda-284.jpg", nombre: "The Powerpuff Girls Bubbles", coleccion: "Caricaturas", talla: "S", precio: 1599 },
+      { id: 285, imagen: "prenda-285.jpg", nombre: "Shorts Civil Regime Layered Flames", coleccion: "Civil Regime", talla: "L", precio: 1649 },
+      { id: 286, imagen: "prenda-286.jpg", nombre: "The Powerpuff Girls Chemical X", coleccion: "Caricaturas", talla: "L", precio: 1599 },
+      { id: 287, imagen: "prenda-287.jpg", nombre: "The Powerpuff Girls Mojo Jojo 08", coleccion: "Caricaturas", talla: "L", precio: 1599 },
+      { id: 288, imagen: "prenda-288.jpg", nombre: "Fight Club", coleccion: "Otros", talla: "L", precio: 2299 },
+      { id: 289, imagen: "prenda-289.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "L", precio: 1999 },
+      { id: 290, imagen: "prenda-290.jpg", nombre: "WWE Rey Mysterio 619", coleccion: "Otros", talla: "S, M y L", precio: 1599 },
+      { id: 291, imagen: "prenda-291.jpg", nombre: "Chainsaw Man Kishibe", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 292, imagen: "prenda-292.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 293, imagen: "prenda-293.jpg", nombre: "Chainsaw Man", coleccion: "Anime", talla: "M", precio: 1599 },
+      { id: 294, imagen: "prenda-294.jpg", nombre: "Civil Regime Jacket", coleccion: "Civil Regime", talla: "XL", precio: 3800 },
+      { id: 295, imagen: "prenda-295.jpg", nombre: "Pants Civil Regime Black Red Flames", coleccion: "Civil Regime", talla: "XL", precio: 1799 },
+      { id: 296, imagen: "prenda-296.jpg", nombre: "Civil Regime Roses From Concrete Doves", coleccion: "Civil Regime", talla: "M y L", precio: 1599 },
+      { id: 297, imagen: "prenda-297.jpg", nombre: "WWE Rey Mysterio Gold Full Zip Hoodie", coleccion: "Otros", talla: "M", precio: 3399 },
+      { id: 298, imagen: "prenda-298.jpg", nombre: "X-Men Cyclops & Mystique Me & Who Hoodie", coleccion: "Marvel", talla: "S", precio: 2499 },
+      { id: 299, imagen: "prenda-299.jpg", nombre: "Mortal Kombat Raiden", coleccion: "Otros", talla: "M", precio: 1599 },
+      { id: 300, imagen: "prenda-300.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "S", precio: 1799 },
+      { id: 301, imagen: "prenda-301.jpg", nombre: "Pants Civil Regime White Virgen", coleccion: "Civil Regime", talla: "S", precio: 1799 },
+      { id: 302, imagen: "prenda-302.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "S", precio: 1799 },
+      { id: 303, imagen: "prenda-303.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "S", precio: 1799 },
+      { id: 304, imagen: "prenda-304.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "S", precio: 1799 },
+      { id: 305, imagen: "prenda-305.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "S", precio: 1799 },
+      { id: 306, imagen: "prenda-306.jpg", nombre: "Spider-Man Red Suit", coleccion: "Marvel", talla: "L", precio: 1599 },
+      { id: 307, imagen: "prenda-307.jpg", nombre: "Civil Regime RFC Crop Long Sleeve", coleccion: "Civil Regime", talla: "S", precio: 1599 },
+      { id: 308, imagen: "prenda-308.jpg", nombre: "Danhausen", coleccion: "Otros", talla: "L y XL", precio: 1599 },
+      { id: 309, imagen: "prenda-309.jpg", nombre: "The Misfits", coleccion: "Otros", talla: "XL", precio: 1599 },
+      { id: 310, imagen: "prenda-310.jpg", nombre: "WWE Rey Mysterio Box Set", coleccion: "Otros", talla: "S", precio: 4800 },
+      { id: 311, imagen: "prenda-311.jpg", nombre: "Spider-Man Mask Eyes", coleccion: "Marvel", talla: "M", precio: 1599 },
+      { id: 312, imagen: "prenda-312.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M y L", precio: 1599 },
+      { id: 313, imagen: "prenda-313.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1599 },
+      { id: 314, imagen: "prenda-314.jpg", nombre: "Civil Regime", coleccion: "Civil Regime", talla: "M", precio: 1799 },
+      { id: 315, imagen: "prenda-315.jpg", nombre: "Pants Civil Regime Blue Spiders", coleccion: "Civil Regime", talla: "M", precio: 1799 }
     ];
+    const ORDEN_COLECCIONES = [
+      "Marvel",
+      "DC Comics",
+      "Terror",
+      "Disney",
+      "Anime",
+      "Star Wars",
+      "Caricaturas",
+      "Civil Regime",
+      "Otros"
+    ];
+
+    function parsearTallas(tallaStr) {
+      if (!tallaStr) return ["M"];
+      if (tallaStr === "Unitalla" || tallaStr === "34" || tallaStr === "S Kids") {
+        return [tallaStr];
+      }
+      return tallaStr
+        .replace(/ y /gi, ",")
+        .split(",")
+        .map((t) => t.trim())
+        .filter(Boolean);
+    }
+
+    function formatearPrecio(precioNum) {
+      return `$${Number(precioNum).toLocaleString("es-MX")} MXN`;
+    }
+
+    // Construir arreglo unificado compatible con la interfaz
+    const todasLasPrendas = PRODUCTOS_CATALOGO.map((item) => {
+      const numeroStr = item.imagen.replace("prenda-", "").replace(".jpg", "");
+      const codigoExtra = String(item.id).includes(".") ? `#${numeroStr}-B` : `#${numeroStr}`;
+      return {
+        id: String(item.id),
+        codigo: codigoExtra,
+        archivo: item.imagen,
+        coleccion: item.coleccion,
+        nombre: item.nombre,
+        precio: formatearPrecio(item.precio),
+        tallas: parsearTallas(item.talla)
+      };
+    });
+
+    let coleccionActiva = "Todas";
 
     const contenedor = document.getElementById("colaboraciones");
     const filtrosBar = document.getElementById("filtros-bar");
+    const buscadorInput = document.getElementById("buscador");
 
-    // Generar botones de filtro
     function renderFiltros() {
-      let html = `<button class="btn-filtro activo" onclick="filtrarColab('todas', this)">Todas (${colaboraciones.reduce((acc, c) => acc + c.productos.length, 0)})</button>`;
-      colaboraciones.forEach((colab, idx) => {
-        html += `<button class="btn-filtro" onclick="filtrarColab(${idx}, this)">${colab.titulo}</button>`;
+      const conteoPorColab = {};
+      todasLasPrendas.forEach((p) => {
+        conteoPorColab[p.coleccion] = (conteoPorColab[p.coleccion] || 0) + 1;
       });
+
+      let html = `<button class="btn-filtro ${coleccionActiva === "Todas" ? "activo" : ""}" onclick="seleccionarFiltro('Todas')">Todas (${todasLasPrendas.length})</button>`;
+
+      ORDEN_COLECCIONES.forEach((col) => {
+        if (conteoPorColab[col]) {
+          const activo = coleccionActiva === col ? "activo" : "";
+          html += `<button class="btn-filtro ${activo}" onclick="seleccionarFiltro('${col.replace(/'/g, "\'")}')">${col} (${conteoPorColab[col]})</button>`;
+        }
+      });
+
       filtrosBar.innerHTML = html;
     }
 
-    // Renderizar secciones de colaboraciones
-    function renderCatalogo(filtro = "todas") {
+    function seleccionarFiltro(col) {
+      coleccionActiva = col;
+      renderFiltros();
+      actualizarVista();
+    }
+
+    function actualizarVista() {
+      const textoBusqueda = buscadorInput.value.trim().toLowerCase();
       contenedor.innerHTML = "";
 
-      colaboraciones.forEach((colab, cIndex) => {
-        if (filtro !== "todas" && filtro !== cIndex) return;
+      ORDEN_COLECCIONES.forEach((nombreCol) => {
+        if (coleccionActiva !== "Todas" && coleccionActiva !== nombreCol) return;
 
-        const cardsHTML = colab.productos
-          .map((prod, pIndex) => {
-            const selectId = `talla-${cIndex}-${pIndex}`;
+        const filtradas = todasLasPrendas.filter((p) => {
+          if (p.coleccion !== nombreCol) return false;
+          if (!textoBusqueda) return true;
+          return (
+            p.nombre.toLowerCase().includes(textoBusqueda) ||
+            p.coleccion.toLowerCase().includes(textoBusqueda) ||
+            p.archivo.toLowerCase().includes(textoBusqueda) ||
+            p.codigo.toLowerCase().includes(textoBusqueda)
+          );
+        });
+
+        if (filtradas.length === 0) return;
+
+        const cardsHTML = filtradas
+          .map((prod) => {
             const opcionesTalla = prod.tallas
               .map((t) => `<option value="${t}">Talla ${t}</option>`)
               .join("");
 
             return `
               <article class="card">
-                <span class="card-tag">${colab.titulo}</span>
+                <span class="card-tag">${prod.coleccion}</span>
+                <span class="card-code">${prod.codigo}</span>
                 <img 
-                  src="${RUTA_IMG}${prod.imagen}" 
+                  src="${RUTA_IMG}${prod.archivo}" 
                   alt="${prod.nombre}"
-                  onerror="this.src='https://placehold.co/600x700/0c0c16/00b4d8?text=${encodeURIComponent(prod.imagen)}'"
+                  loading="lazy"
+                  onerror="this.src='https://placehold.co/600x700/0c0c16/00b4d8?text=${encodeURIComponent(prod.archivo)}'"
                 >
                 <div class="card-body">
                   <h4>${prod.nombre}</h4>
                   <p class="precio">${prod.precio}</p>
-                  <select id="${selectId}">${opcionesTalla}</select>
-                  <button class="btn-compra" onclick="comprar(${cIndex}, ${pIndex})">
-                    🛒 Comprar por WhatsApp
+                  <select id="talla-${prod.id}">${opcionesTalla}</select>
+                  <button class="btn-compra" onclick="comprar('${prod.id}')">
+                    🛒 Pedir por WhatsApp
                   </button>
                 </div>
               </article>
@@ -670,8 +987,8 @@
         contenedor.innerHTML += `
           <section class="bloque-colaboracion">
             <div class="colab-header">
-              <h3>${colab.titulo}</h3>
-              <span class="colab-badge">${colab.productos.length} ${colab.productos.length === 1 ? "pieza" : "piezas"}</span>
+              <h3>${nombreCol}</h3>
+              <span class="colab-badge">${filtradas.length} ${filtradas.length === 1 ? "pieza" : "piezas"}</span>
             </div>
             <div class="grid-productos">
               ${cardsHTML}
@@ -679,27 +996,24 @@
           </section>
         `;
       });
+
+      if (contenedor.innerHTML === "") {
+        contenedor.innerHTML = `<p style="text-align:center; color: var(--text-muted); padding: 40px 0;">No se encontraron prendas con ese criterio de búsqueda.</p>`;
+      }
     }
 
-    function filtrarColab(filtro, boton) {
-      document.querySelectorAll(".btn-filtro").forEach((btn) => btn.classList.remove("activo"));
-      boton.classList.add("activo");
-      renderCatalogo(filtro);
-    }
-
-    function comprar(cIndex, pIndex) {
-      const colab = colaboraciones[cIndex];
-      const prod = colab.productos[pIndex];
-      const talla = document.getElementById(`talla-${cIndex}-${pIndex}`).value;
+    function comprar(id) {
+      const prod = todasLasPrendas.find((p) => p.id === String(id));
+      const talla = document.getElementById(`talla-${id}`).value;
       const mensaje = encodeURIComponent(
-        `Hola SOMAFITX, me interesa comprar: ${prod.nombre} de la colección ${colab.titulo} (${prod.precio}) en talla ${talla}.`
+        `Hola SOMAFITX, me interesa la prenda ${prod.archivo} (${prod.nombre}) de la colección ${prod.coleccion} en talla ${talla} (${prod.precio}).`
       );
       window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, "_blank");
     }
 
-    // Inicializar tienda
+    // Inicializar
     renderFiltros();
-    renderCatalogo();
+    actualizarVista();
   </script>
 
 </body>
