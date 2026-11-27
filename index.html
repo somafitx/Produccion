@@ -1829,6 +1829,25 @@
       return "Playeras";
     }
 
+    function obtenerLeyendaTipoPrenda(prod) {
+      const nombreLower = (prod.nombre || "").toLowerCase();
+      switch (prod.tipoPrenda) {
+        case "Sudaderas":
+          return "la sudadera";
+        case "Pants y Short":
+          return nombreLower.includes("short") ? "el short" : "el pants";
+        case "Chamarras":
+          return "la chamarra";
+        case "Box Sets":
+          return "el box set";
+        case "Gorras y Caletas":
+          return nombreLower.includes("gorra") || nombreLower.includes("cap") ? "la gorra" : "la caleta";
+        case "Playeras":
+        default:
+          return "la playera";
+      }
+    }
+
     function parsearTallas(tallaStr) {
       if (!tallaStr) return ["M"];
       if (tallaStr === "Unitalla" || tallaStr === "34" || tallaStr === "S Kids") {
@@ -2256,8 +2275,9 @@
       renderizarPillsTallas(prod.tallas);
 
       document.getElementById("modal-btn-comprar").onclick = function() {
+        const leyendaPrenda = obtenerLeyendaTipoPrenda(prod);
         const mensaje = encodeURIComponent(
-          `Hola SOMAFITX, me interesa la prenda ${prod.archivo} (${prod.nombre} - ${prod.tipoPrenda}) de la colección ${prod.coleccion} en talla ${tallaSeleccionadaModal} (${prod.precio}).`
+          `Hola SomafitX, estoy interesado en ${leyendaPrenda} "${prod.nombre}" (${prod.archivo} / ${prod.codigo}) de la colección ${prod.coleccion} en talla ${tallaSeleccionadaModal}, el cual tiene un costo de ${prod.precio}.`
         );
         window.open(`https://wa.me/${TELEFONO_WHATSAPP}?text=${mensaje}`, "_blank");
       };
