@@ -1,167 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SomaFitX | Sitio en Mantenimiento</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-dark: #07060D;
-            --bg-card: #0F0D1B;
-            --purple-neon: #A000FF;
-            --purple-glow: rgba(160, 0, 255, 0.4);
-            --blue-neon: #00E5FF;
-            --blue-glow: rgba(0, 229, 255, 0.4);
-            --text-light: #F0F4F8;
-            --text-muted: #A0A5BA;
-            --border-glow: #1A162B;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOMAFITX | Sitio en Mantenimiento</title>
+  <style>
+    :root {
+      --bg-dark: #05050b;
+      --bg-card: #0b0b16;
+      --text-main: #ffffff;
+      --text-muted: #a3a8c2;
+      --neon-purple: #8b2cf5;
+      --neon-blue: #0066ff;
+      --neon-cyan: #00a8ff;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
 
-        html, body {
-            width: 100%;
-            height: 100vh;
-            background-color: var(--bg-dark);
-            overflow: hidden;
-        }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(145deg, #05050a 0%, #0a0a14 100%);
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 18px;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-        body {
-            color: var(--text-light);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            background: radial-gradient(circle at 50% 50%, rgba(160, 0, 255, 0.15), transparent 70%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 229, 255, 0.15), transparent 70%),
-                        var(--bg-dark);
-        }
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      filter: blur(115px);
+      opacity: 0.28;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        .maintenance-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-glow);
-            border-radius: 20px;
-            padding: 45px 30px;
-            max-width: 520px;
-            width: 100%;
-            text-align: center;
-            box-shadow: 0 0 35px var(--purple-glow), 0 0 35px var(--blue-glow);
-            position: relative;
-        }
+    body::before {
+      background: var(--neon-blue);
+      top: -120px;
+      left: -80px;
+    }
 
-        .logo-img {
-            max-width: 180px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--purple-glow), 0 0 20px var(--blue-glow);
-            border: 2px solid var(--blue-neon);
-            margin-bottom: 25px;
-        }
+    body::after {
+      background: var(--neon-purple);
+      bottom: -120px;
+      right: -80px;
+    }
 
-        /* ANIMACIÓN DE ENGRANES GIRATORIOS */
-        .gears-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            position: relative;
-            height: 90px;
-        }
+    .mantenimiento-card {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      width: 100%;
+      background: rgba(11, 11, 22, 0.92);
+      border: 1px solid rgba(0, 168, 255, 0.35);
+      border-radius: 16px;
+      padding: 40px 28px;
+      text-align: center;
+      box-shadow: -10px 0 38px rgba(139, 44, 245, 0.32), 10px 0 38px rgba(0, 102, 255, 0.32);
+    }
 
-        .gear {
-            font-size: 3.5rem;
-            position: absolute;
-        }
+    .visual-wrap {
+      position: relative;
+      width: 185px;
+      height: 185px;
+      margin: 0 auto 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        .gear-large {
-            color: var(--purple-neon);
-            text-shadow: 0 0 15px var(--purple-glow);
-            left: calc(50% - 45px);
-            top: 5px;
-            animation: spinClockwise 6s linear infinite;
-        }
+    .logo-principal {
+      width: 152px;
+      height: 152px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: radial-gradient(circle, #141428 0%, #05050b 100%);
+      padding: 5px;
+      border: 3px solid transparent;
+      background-image: linear-gradient(#080812, #080812), linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 0 24px rgba(0, 168, 255, 0.35);
+    }
 
-        .gear-small {
-            color: var(--blue-neon);
-            text-shadow: 0 0 15px var(--blue-glow);
-            font-size: 2.3rem;
-            left: calc(50% + 10px);
-            top: 35px;
-            animation: spinCounterClockwise 4s linear infinite;
-        }
+    .engrane-badge {
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #080814;
+      border: 1.5px solid rgba(0, 168, 255, 0.55);
+      box-shadow: 0 0 18px rgba(139, 44, 245, 0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-        @keyframes spinClockwise {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+    .engrane-svg {
+      width: 42px;
+      height: 42px;
+      animation: girarEngrane 7s linear infinite;
+      transform-origin: center;
+    }
 
-        @keyframes spinCounterClockwise {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(-360deg); }
-        }
+    @keyframes girarEngrane {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
-        .title {
-            font-size: 1.8rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            background: linear-gradient(135deg, #FFF 30%, var(--blue-neon) 70%, var(--purple-neon));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: 1px;
-        }
+    .badge-estado {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--neon-cyan);
+      background: rgba(0, 168, 255, 0.1);
+      border: 1px solid rgba(0, 168, 255, 0.35);
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
 
-        .message {
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ffffff, var(--neon-cyan), var(--neon-purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-        .slogan-bar {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            color: var(--blue-neon);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
-        }
-    </style>
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .acciones {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-principal,
+    .btn-secundario {
+      text-decoration: none;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn-principal {
+      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(139, 44, 245, 0.42);
+    }
+
+    .btn-secundario {
+      background: rgba(17, 17, 34, 0.9);
+      color: var(--text-main);
+      border: 1px solid rgba(0, 168, 255, 0.4);
+    }
+
+    .btn-principal:hover,
+    .btn-secundario:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.12);
+    }
+
+    .lema {
+      margin-top: 26px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: #cbd5e1;
+    }
+
+    .lema span {
+      color: var(--neon-purple);
+      margin: 0 8px;
+    }
+  </style>
 </head>
 <body>
-
-    <div class="maintenance-card">
-        <!-- LOGO OFICIAL -->
-        <img src="LOGO-SOMAFITX.jpeg" alt="SomaFitX Logo" class="logo-img" onerror="this.style.display='none'">
-
-        <!-- ANIMACIÓN DE ENGRANES GIRATORIOS -->
-        <div class="gears-container">
-            <i class="fa-solid fa-gear gear gear-large"></i>
-            <i class="fa-solid fa-gear gear gear-small"></i>
-        </div>
-
-        <!-- TEXTO -->
-        <h1 class="title">Sitio en Mantenimiento</h1>
-        <p class="message">
-            Estamos optimizando la plataforma para brindarte la mejor experiencia en ropa deportiva y suplementos.
-            <br><br>
-            ¡Volveremos a estar en línea muy pronto!
-        </p>
-
-        <div class="slogan-bar">
-            <span>FUERZA</span> • <span>DISCIPLINA</span> • <span>RESULTADOS</span>
-        </div>
+  <main class="mantenimiento-card">
+    <div class="visual-wrap">
+      <img
+        src="./somafitx.jpeg"
+        alt="Logo SOMAFITX"
+        class="logo-principal"
+      />
+      <div class="engrane-badge" aria-hidden="true">
+        <svg class="engrane-svg" viewBox="0 0 24 24" fill="none">
+          <defs>
+            <linearGradient id="gradEngrane" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00a8ff" />
+              <stop offset="100%" stop-color="#a855f7" />
+            </linearGradient>
+          </defs>
+          <path
+            fill="url(#gradEngrane)"
+            d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
+          />
+        </svg>
+      </div>
     </div>
 
+    <span class="badge-estado">En mantenimiento</span>
+    <h1>Volvemos pronto</h1>
+    <p>
+      Estamos actualizando el catálogo y ajustando detalles en <strong>SOMAFITX</strong> para ofrecerte una mejor experiencia. Si buscas alguna prenda o cotización, escríbenos directo.
+    </p>
+
+    <div class="acciones">
+      <a href="https://wa.me/525525381091" target="_blank" rel="noopener noreferrer" class="btn-principal">
+        Contactar por WhatsApp
+      </a>
+      <a href="https://www.instagram.com/somafitx/" target="_blank" rel="noopener noreferrer" class="btn-secundario">
+        Instagram @SOMAFITX
+      </a>
+    </div>
+
+    <div class="lema">
+      FUERZA <span>•</span> DISCIPLINA <span>•</span> RESULTADOS
+    </div>
+  </main>
 </body>
 </html>
