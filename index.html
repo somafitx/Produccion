@@ -150,8 +150,8 @@
       }
     }
 
-    /* Círculo derecho: Engrane girando */
-    .engrane-badge {
+    /* Círculo derecho: Persona en computadora simulando mantenimiento */
+    .dev-badge {
       position: absolute;
       right: 8px;
       top: 50%;
@@ -165,23 +165,55 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
       z-index: 3;
     }
 
-    .engrane-svg {
-      width: 68px;
-      height: 68px;
-      animation: girarEngrane 7s linear infinite;
-      transform-origin: center;
+    .dev-svg {
+      width: 90px;
+      height: 90px;
     }
 
-    @keyframes girarEngrane {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
+    .brazo-tecleo-izq {
+      animation: teclearIzq 0.55s ease-in-out infinite alternate;
+      transform-origin: 26px 43px;
+    }
+
+    .brazo-tecleo-der {
+      animation: teclearDer 0.55s ease-in-out infinite alternate;
+      transform-origin: 31px 43px;
+    }
+
+    .pantalla-brillo {
+      animation: pulsoPantalla 2s ease-in-out infinite;
+    }
+
+    .codigo-linea-1 {
+      animation: escribirCodigo 1.4s ease-in-out infinite;
+    }
+
+    .codigo-linea-2 {
+      animation: escribirCodigo 1.4s ease-in-out 0.45s infinite;
+    }
+
+    @keyframes teclearIzq {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-7deg); }
+    }
+
+    @keyframes teclearDer {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(7deg); }
+    }
+
+    @keyframes pulsoPantalla {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes escribirCodigo {
+      0%, 100% { opacity: 0.35; }
+      50% { opacity: 1; }
     }
 
     .badge-estado {
@@ -210,166 +242,4 @@
     }
 
     p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .acciones {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn-principal,
-    .btn-secundario {
-      text-decoration: none;
-      padding: 11px 22px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      transition: transform 0.2s ease, filter 0.2s ease;
-    }
-
-    .btn-principal {
-      background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
-      color: #ffffff;
-      box-shadow: 0 4px 18px rgba(139, 44, 245, 0.42);
-    }
-
-    .btn-secundario {
-      background: rgba(17, 17, 34, 0.9);
-      color: var(--text-main);
-      border: 1px solid rgba(0, 168, 255, 0.4);
-    }
-
-    .btn-principal:hover,
-    .btn-secundario:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.12);
-    }
-
-    .lema {
-      margin-top: 26px;
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 3.5px;
-      text-transform: uppercase;
-      color: #cbd5e1;
-    }
-
-    .lema span {
-      color: var(--neon-purple);
-      margin: 0 8px;
-    }
-
-    @media (max-width: 480px) {
-      .visual-wrap {
-        max-width: 340px;
-        height: 150px;
-      }
-
-      .logo-principal {
-        width: 120px;
-        height: 120px;
-      }
-
-      .lifter-badge,
-      .engrane-badge {
-        width: 84px;
-        height: 84px;
-      }
-
-      .lifter-svg {
-        width: 74px;
-        height: 74px;
-      }
-
-      .engrane-svg {
-        width: 54px;
-        height: 54px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <main class="mantenimiento-card">
-    <div class="visual-wrap">
-      <!-- Círculo izquierdo: Monito cargando pesas -->
-      <div class="lifter-badge" aria-hidden="true">
-        <svg class="lifter-svg" viewBox="0 0 74 74" fill="none">
-          <defs>
-            <linearGradient id="gradPesas" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#00a8ff" />
-              <stop offset="100%" stop-color="#a855f7" />
-            </linearGradient>
-          </defs>
-
-          <!-- Cuerpo del monito -->
-          <g class="cuerpo-monito">
-            <circle cx="37" cy="34" r="6.5" fill="#ffffff" />
-            <path d="M31 42.5h12l-2 15h-8l-2-15z" fill="url(#gradPesas)" />
-            <path d="M33 57.5l-3 11h4.5l2.5-11h-4zM41 57.5l3 11h-4.5l-2.5-11h4z" fill="#cbd5e1" />
-          </g>
-
-          <!-- Barra y discos cargando -->
-          <g class="barra-pesas">
-            <path d="M32 44l-9-11M42 44l9-11" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" />
-            <line x1="10" y1="32" x2="64" y2="32" stroke="#cbd5e1" stroke-width="3.2" stroke-linecap="round" />
-            <rect x="13" y="23" width="4.5" height="18" rx="1.5" fill="url(#gradPesas)" />
-            <rect x="19" y="25.5" width="3.5" height="13" rx="1.2" fill="#00a8ff" />
-            <rect x="51.5" y="25.5" width="3.5" height="13" rx="1.2" fill="#00a8ff" />
-            <rect x="56.5" y="23" width="4.5" height="18" rx="1.5" fill="url(#gradPesas)" />
-          </g>
-        </svg>
-      </div>
-
-      <!-- Logo principal al centro -->
-      <img
-        src="./somafitx.jpeg"
-        alt="Logo SOMAFITX"
-        class="logo-principal"
-      />
-
-      <!-- Círculo derecho: Engrane girando -->
-      <div class="engrane-badge" aria-hidden="true">
-        <svg class="engrane-svg" viewBox="0 0 24 24" fill="none">
-          <defs>
-            <linearGradient id="gradEngrane" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#00a8ff" />
-              <stop offset="100%" stop-color="#a855f7" />
-            </linearGradient>
-          </defs>
-          <path
-            fill="url(#gradEngrane)"
-            d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"
-          />
-        </svg>
-      </div>
-    </div>
-
-    <span class="badge-estado">En mantenimiento</span>
-    <h1>Volvemos pronto</h1>
-    <p>
-      Estamos actualizando el catálogo y ajustando detalles en <strong>SOMAFITX</strong> para ofrecerte una mejor experiencia. Si buscas alguna prenda o cotización, escríbenos directo.
-    </p>
-
-    <div class="acciones">
-      <a href="https://wa.me/525525381091" target="_blank" rel="noopener noreferrer" class="btn-principal">
-        Contactar por WhatsApp
-      </a>
-      <a href="https://www.instagram.com/somafitx/" target="_blank" rel="noopener noreferrer" class="btn-secundario">
-        Instagram @SOMAFITX
-      </a>
-    </div>
-
-    <div class="lema">
-      FUERZA <span>•</span> DISCIPLINA <span>•</span> RESULTADOS
-    </div>
-  </main>
-</body>
-</html>
+      color:
